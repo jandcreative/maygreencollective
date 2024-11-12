@@ -1,0 +1,1038 @@
+
+#page-wrapper{
+    padding-top: 149px;
+}
+
+#page-wrapper.top{
+    padding-top: 89px;
+}
+
+/* Hero Home */
+section#video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 193px);
+    color: #fff;
+    text-align: center;
+    scroll-snap-align: start;
+    margin: 0 40px 40px;
+    overflow: hidden;
+}
+
+section#video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.block-intro-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 2em;
+}
+
+.overlay {
+    background-color: black;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+.block-content {
+    text-align: center;
+}
+
+.block-content h1 {
+    color: var(--white);
+    max-width: 600px;
+    width: 100%;
+}
+
+p.claim {
+    font-size: 40px;
+    line-height: 48px;
+    color: var(--white);
+}
+
+.cta {
+    position: absolute;
+    z-index: 10;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+
+.cta span {
+    font-size: 20px;
+    font-family: "Brockmann-semibold";
+    line-height: 25px;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+
+/* Why We Exist */
+
+section#why-we-exist {
+    padding: 70px 0;
+    /* min-height: auto; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.intro-text {
+    display: flex;
+    gap: 2em;
+    padding: 2em 0;
+}
+
+.intro-text .column-left,
+.intro-text .column-right {
+    flex-basis: 50%;
+}
+
+.intro-text h2 {
+    flex-basis: 50%;
+}
+
+.intro-text p {
+    flex-basis: 50%;
+}
+
+
+/* List Deseases */
+
+.list-diseases {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 3fr));
+    gap: 22px;
+
+    .box-disease {
+        background-color: var(--white);
+        border-radius: 25px;
+        padding: 20px;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .info {
+            display: flex;
+            gap: 1em;
+            align-items: flex-start;
+
+            h3 {
+                font-family: "Brockmann-regular";
+                font-size: 25px;
+                color: var(--black);
+                padding-top: 10px;
+                line-height: normal;
+            }
+        }
+
+        .number span {
+            font-family: "Brockmann-regular";
+            font-size: 80px;
+            color: var(--accent);
+        }
+    }
+}
+
+/* Diagnostics */
+
+section.diagnostics {
+    padding: 70px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.intro-text.white h2,
+.intro-text.white p {
+    color: var(--white);
+}
+
+section.diagnostics .list-items-reasons {
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.list-items-reasons .item-reason {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+section.diagnostics .list-items-reasons h3 {
+    font-family: "Brockmann-semibold";
+    color: var(--white);
+    font-size: 40px;
+}
+
+/* What We Do */
+
+section#what-we-do {
+   /*  padding: 0 0 70px; */
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.image-cells {
+    text-align: center;
+    position: relative;
+    top: 0;
+    z-index: 0;
+}
+
+.image-cells img {
+    max-width: 1400px;
+    width: 100%;
+    height: auto;
+}
+
+/* .container-slider {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+} */
+
+.container-slider {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+}
+
+.slider-organs {
+    position: relative;
+    display: flex;
+    gap: 1em;
+   /*  height: 300px; */
+    height: auto;
+    width: 100%;
+}
+
+.block-spacer.alignwide.alignwide.special{
+    height: 220px;
+}
+
+
+.slider-organs img {
+    min-width: 240px;
+    width: auto;
+    height: auto;
+    transition: transform .5s;
+    max-height: 240px;
+}
+
+
+.slider-organs .item-organ {
+    cursor: pointer;
+}
+
+.slider-organs .item-organ:hover img:hover {
+    transform: scale(1.15);
+}
+
+
+section#what-we-do {
+    min-height: auto;
+}
+
+section#what-we-do h2 {
+    text-align: center;
+}
+
+section#what-we-do .box-frame {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 25px 25px 0 0;
+    height: auto;
+    /* min-height: 700px; */
+}
+
+
+section#what-we-do .list-content {
+    display: flex;
+    gap: 3em;
+}
+
+section#what-we-do .list-content .title,
+section#what-we-do .list-content .text {
+    display: flex;
+
+}
+
+section#what-we-do .list-content .title {
+    flex-basis: 45%;
+}
+
+section#what-we-do .list-content .text {
+    flex-basis: 55%;
+    border-left: 2px solid var(--accent);
+    padding: 0 3em 0 3em;
+}
+
+section#what-we-do .list-content .title h3 {
+    font-family: "Brockmann-semibold";
+    font-size: 40px;
+    line-height: normal;
+}
+
+section#what-we-do .list-content .text p {
+    color: var(--accent);
+    margin-bottom: 0;
+}
+
+/* Our Solution */
+
+section#our-solution {
+    padding: 70px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.box-text {
+    display: flex;
+    gap: 4em;
+    height: auto;
+    align-items: center;
+}
+
+section#our-solution .box-text .column-left {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+
+section#our-solution .column-left .list-items-reasons {
+    padding: 1em 0;
+}
+
+section#our-solution .box-text .column-right {
+    display: flex;
+    flex-basis: 50%;
+}
+
+section#our-solution h2 {
+    color: var(--white);
+}
+
+section#our-solution h3 {
+    color: var(--white);
+}
+
+/* The Benefits */
+
+body section.benefits.is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    width: 100%;
+}
+
+section.benefits {
+    min-height: 100vh;
+    opacity: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://nivd.world/wp-content/uploads/img_background_benefits.jpg");
+}
+
+section.benefits .layer-overlay {
+    position: absolute;
+    height: 100%;
+    background-color: var(--accent);
+    width: 50%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+section.benefits .container {
+    width: 100%;
+
+}
+
+.column-benefits {
+    max-width: 50%;
+    width: 100%;
+    padding: 0 80px 0 0;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.column-benefits .list-items-reasons {
+    padding: 1em 0;
+}
+
+.column-benefits h2 {
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.column-benefits h3 {
+    color: var(--white);
+}
+
+/* Our Impact */
+
+section.our-impact {
+    padding: 70px 0 0;
+    min-height: 100vh;
+}
+
+section.our-impact .container-full {
+    opacity: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 188px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    scroll-snap-align: start;
+    margin: 80px 40px 44px;
+    border-radius: 25px;
+}
+
+section.our-impact h2 {
+    font-family: "Brockmann-semibold";
+    font-size: 96px;
+    line-height: 99px;
+    padding-bottom: 25px;
+    color: var(--white);
+}
+
+a.btn.play {
+    font-family: "Brockmann-semibold";
+    font-size: 20px;
+    line-height: 25px;
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 20px;
+    border: 2px solid var(--white);
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+/* Organs*/
+
+section.organs {
+    padding: 70px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+section.organs .twentytwenty-wrapper.twentytwenty-horizontal {
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+section.organs .twentytwenty-after-label,
+section.organs .twentytwenty-before-label {
+    display: none;
+}
+
+
+/* People */
+
+section.people {
+    min-height: auto;
+    position: relative;
+    padding: 70px 0;
+}
+
+section.people .slider-people {
+    width: 100%;
+    display: flex;
+}
+
+section.people .slider-people picture {
+    max-width: 514px;
+    width: 100%;
+    height: auto;
+    margin: 0 26px;
+}
+
+section.people .slider-people picture img {
+    border-radius: 25px;
+}
+
+section.people .slider-people picture img:hover {
+    cursor: grab;
+}
+
+/* Our-Team*/
+
+section#our-team {
+    padding: 70px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+section#our-team .wp-block-group__inner-container {
+    max-width: 1320px;
+    width: 100%;
+}
+
+section#our-team h2 {
+    color: var(--white);
+}
+
+
+.list-members-nivd,
+.list-advisory-team {
+    display: flex;
+    gap: 2em;
+    padding: 2em 0;
+    flex-wrap: wrap;
+}
+
+.list-members-nivd .item-member,
+.list-advisory-team .item-member {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    border-top: 2px solid var(--white);
+    padding: 24px 0;
+    flex-basis: calc(50% - 1em);
+}
+
+.avatar img {
+    width: 113px;
+    height: auto;
+}
+
+
+.list-advisory-team .info p {
+    color: var(--white);
+}
+
+
+/* Careers */
+
+section.careers {
+    padding: 70px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.list-careers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+}
+
+.list-careers .item-careers {
+    background-color: var(--white);
+    border-radius: 25px;
+    /* padding: 20px; */
+    padding: 20px 20px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.list-careers .item-careers .name {
+    display: flex;
+    gap: 0.5em;
+    border-bottom: 2px solid var(--accent);
+}
+
+.list-careers .item-careers .content p {
+    margin-bottom: 0;
+}
+
+.list-careers .item-careers a {
+    font-family: "Brockmann-semibold";
+    color: var(--accent);
+    font-size: 20px;
+    border: 2px solid var(--accent);
+    border-radius: 50px;
+    padding: 8px 14px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.list-careers .item-careers a:hover {
+    text-decoration: underline;
+}
+
+a.button.load-more {
+    font-family: "Brockmann-semibold";
+    color: var(--black);
+    font-size: 20px;
+    border: 2px solid var(--black);
+    border-radius: 50px;
+    padding: 8px 14px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+a.button.load-more:hover {
+    text-decoration: underline;
+}
+
+/* Contact */
+
+section#contact {
+    padding: 70px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    h2 {
+        color: var(--white);
+    }
+
+    .row-location {
+        display: flex;
+        gap: 36px;
+        padding-bottom: 36px;
+
+        .box-address {
+            border-radius: 20px;
+            background-color: var(--accent);
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            p {
+                color: var(--white);
+                font-family: "Brockmann-semibold";
+                font-size: 25px;
+                line-height: 30px;
+                margin-bottom: 0;
+                padding-bottom: 0.5em;
+            }
+
+            p.ubication {
+                color: var(--black);
+            }
+        }
+
+        .box {
+            display: flex;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+
+            img {
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .map {
+        display: flex;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 100%;
+        height: 500px;
+        max-width: 100%;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+/* 
+    header{
+        position: relative;
+    }
+
+    #page-wrapper{
+        padding-top: 0!important;
+    } */
+
+    /* Video Section */
+
+    p.claim {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    /* Our Impact */
+
+    section.our-impact h2 {
+        font-size: 60px;
+        line-height: normal;
+        padding-bottom: 0;
+    }
+
+    /* Box-Text */
+
+    .box-text {
+        flex-direction: column;
+    }
+
+    /* Diagnostics */
+
+    section.diagnostics .list-items-reasons h3 {
+        font-size: 34px;
+        line-height: normal;
+    }
+    
+    /* Our Solution */
+
+    section#our-solution .wp-block-group__inner-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+
+    section#our-solution .box-text .column-left {
+        width: 100%;
+    }
+    
+
+    section#our-solution .column-right img {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    /* Benefits */
+
+    section.benefits .layer-overlay {
+        width: 100%;
+    }
+
+    .column-benefits {
+        max-width: 100%;
+        padding:0;
+    }
+
+    /* Organs */
+    section.wp-block-group.alignfull.organs.has-background.is-layout-constrained.wp-block-group-is-layout-constrained .box-text .column-left {
+        order: 2;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    section#video {
+        height: calc(100vh - 316px);
+
+    }
+}
+
+@media only screen and (max-width:800px) {
+
+
+    /* Why We Exist */
+
+    .intro-text {
+        flex-direction: column;
+        gap:0;
+    }
+    
+
+    .list-diseases {
+        display: flex;
+        flex-direction: column;
+        max-width: 480px;
+    }
+
+    /* Diagnostics */
+
+    section.diagnostics .list-items-reasons{
+        gap:0;
+    }
+
+    section.diagnostics .list-items-reasons h3 {
+        font-size: 28px;
+    }
+
+    /* What We Do */
+
+    section#what-we-do .list-content {
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    section#what-we-do h2{
+        font-size: 40px;
+    }
+
+    section#what-we-do .block-spacer.big {
+        height: 20px;
+    }
+
+    section#what-we-do .list-content .title h3 {
+        font-size: 28px;
+    }
+
+    section#what-we-do .list-content .text{
+        padding: 0 2em 0 2em;
+    }
+
+    
+    /* Box-Text */
+
+    .box-text {
+        gap: 3em;
+    }
+
+    /* People */
+
+    section.people .block-spacer.xl {
+        height: 60px;
+    }
+
+    section.people .slider-people picture {
+        max-width: 380px;
+    }
+
+    section.people .slick-slide img{
+        max-width: 380px;
+    }
+
+    /* Contact */
+
+    .list-members-nivd, .list-advisory-team {
+        gap: 0;
+        padding: 2em 0;
+        flex-direction: column;
+    }
+
+
+    section#contact .row-location {
+        flex-direction: column;
+    }
+
+    section#contact .map{
+        height: 400px;
+    }
+}
+
+
+@media only screen and (max-width: 580px) {
+
+
+
+section.organs .twentytwenty-wrapper.twentytwenty-horizontal {
+    width: 380px;
+    height: 380px;
+}
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    #page-wrapper {
+        padding-top: 129px;
+    }
+
+    /* Video Section */
+    
+    section#video{
+        margin: 0 20px 20px;
+        min-height: calc(100vh - 150px);
+    }
+
+    .block-intro-content{
+        padding: 1em;
+    }
+
+    p.claim {
+        font-size: 24px;
+        line-height: normal;
+    }
+
+    .cta {
+        bottom: 50px;
+    }
+    
+    .cta span {
+        display: none;
+    }
+
+    /* Our Impact */
+
+    section.our-impact {
+        padding: 30px 0 0;
+        min-height: 100vh;
+    }
+
+    section.our-impact h2 {
+        font-size: 48px;
+    }
+
+    section.our-impact .container-full{
+        margin: 80px 20px 44px;
+        min-height: calc(100vh - 140px);
+    }
+
+     /* What We Do */
+
+     section#what-we-do .box-frame{
+        padding: 30px;
+    }
+
+
+    section#what-we-do .list-content .text {
+        padding: 0 1em 0 1em;
+    }
+     
+    section#what-we-do .list-content .title h3 {
+        font-size: 24px;
+    }
+
+    section#what-we-do .list-content {
+        gap: 2em;
+    }
+
+    section#what-we-do .slider-organs .slick-slide img{
+        max-width: 250px;
+        padding: 0 20px;
+    }
+
+   
+    /* Box-Text */
+
+    .list-items-reasons .item-reason img{
+        width: 70px;
+    }
+
+    .box-text {
+        gap: 2em;
+    }
+
+    .box-address .icon img {
+        width: 120px;
+    }
+
+    section#contact .map{
+        height: 250px;
+    }
+
+
+    section.organs .twentytwenty-wrapper.twentytwenty-horizontal {
+        width: 340px;
+        height: 340px;
+    }
+
+    section.people .column-right img{
+        max-width: 340px;
+        width: 100%;
+        height: auto;
+    }
+
+  
+
+    /* General Spacer */
+
+    .block-spacer.xl{
+        height: 60px;
+    }
+    
+    .block-spacer.big {
+        height: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+
+    .list-diseases .box-disease .info{
+        flex-wrap: wrap;
+    }
+
+    h1{
+        font-size: 45px;
+        line-height: normal;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    section#what-we-do h2 {
+        font-size: 34px;
+    }
+
+    section.our-impact h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    section.diagnostics .list-items-reasons h3 {
+        font-size: 22px;
+    }
+
+    .block-spacer.alignwide.alignwide.special {
+        height: 160px;
+    }
+
+    section#what-we-do .slider-organs .slick-slide img {
+        max-width: 200px;
+        padding: 0 40px;
+    }
+
+    section#contact .row-location .box-address p{
+        font-size: 24px;
+    }
+}
