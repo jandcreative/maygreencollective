@@ -2,49 +2,43 @@ jQuery(document).ready(function ($) {
     $("#hamburguer").click(function () {
       if ($("#hamburguer").attr("class") == "mobile") {
         $("#hamburguer").addClass("close-hamburguer");
-        $(".full-menu").css({ left: "0" });
+        $(".full-menu").css({ top: "0" });
       } else {
         $("#hamburguer").removeClass("close-hamburguer");
-        $(".full-menu").css({ left: "-100%" });
+        $(".full-menu").css({ top: "-100%" });
       }
 
     });
 
 
-    $('#menu-item-489 a').click(function() {
+    $('#menu-item-30 a').click(function() {
 
         $('#hamburguer').removeClass('close-hamburguer');
-        $('.full-menu').css({ 'left': '-100%', });
+        $('.full-menu').css({ 'top': '-100%', });
 
     });
 
-    $('#menu-item-490 a').click(function() {
+    $('#menu-item-31 a').click(function() {
 
         $('#hamburguer').removeClass('close-hamburguer');
-        $('.full-menu').css({ 'left': '-100%', });
+        $('.full-menu').css({ 'top': '-100%', });
 
     });
 
-    $('#menu-item-491 a').click(function() {
+    $('#menu-item-32 a').click(function() {
 
         $('#hamburguer').removeClass('close-hamburguer');
-        $('.full-menu').css({ 'left': '-100%', });
+        $('.full-menu').css({ 'top': '-100%', });
 
     });
 
-    $('#menu-item-492 a').click(function() {
+    $('#menu-item-33 a').click(function() {
 
       $('#hamburguer').removeClass('close-hamburguer');
-      $('.full-menu').css({ 'left': '-100%', });
+      $('.full-menu').css({ 'top': '-100%', });
 
   });
 
-  $('#menu-item-493 a').click(function() {
-
-      $('#hamburguer').removeClass('close-hamburguer');
-      $('.full-menu').css({ 'left': '-100%', });
-
-  });
 });
   
   
