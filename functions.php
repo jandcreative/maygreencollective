@@ -1,9 +1,9 @@
 <?php
 
 /* Setup */
-if(!function_exists('nivd_support')):
+if(!function_exists('maygreen_support')):
 
-	function nivd_support() {
+	function maygreen_support() {
 
 		// Add support for block styles.
 		add_theme_support('wp-block-styles');
@@ -15,12 +15,12 @@ if(!function_exists('nivd_support')):
 
 		register_nav_menus(
 			array(
-				'primary' => __('Menu Top', 'nivd'),
+				'primary' => __('Menu Top', 'maygreen'),
 			)
 		);
 		register_nav_menus(
 			array(
-				'legal' => __('Menu Legal', 'nivd'),
+				'legal' => __('Menu Legal', 'maygreen'),
 			)
 		);
 
@@ -28,14 +28,8 @@ if(!function_exists('nivd_support')):
 
 endif;
 
-add_action('after_setup_theme', 'nivd_support');
+add_action('after_setup_theme', 'maygreen_support');
 
-
-function my_acf_google_map_api( $api ){
-    $api['key'] = 'AIzaSyA-rJfouQ23ni_4QEHz9bnYqzq-bp1qNmg';
-    return $api;
-}
-add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 function add_file_types_to_uploads($file_types) {
@@ -50,14 +44,14 @@ add_filter( 'acf/admin/prevent_escaped_html_notice', '__return_true' );
 
 
 /* Add styles */
-function nivd_enqueue_style() {
-	wp_enqueue_style('nivd-style', get_stylesheet_uri(), 1.0, 'all');
+function maygreen_enqueue_style() {
+	wp_enqueue_style('maygreen-style', get_stylesheet_uri(), 1.0, 'all');
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/menu.js', ['jquery']);
 	wp_enqueue_script('nav', get_template_directory_uri() . '/js/nav.js', ['jquery']);
 	wp_enqueue_script('scroll-reveal', get_template_directory_uri() . '/js/reveal.js');
 }
 
-add_action('wp_enqueue_scripts', 'nivd_enqueue_style');
+add_action('wp_enqueue_scripts', 'maygreen_enqueue_style');
 
 
 /*
@@ -77,8 +71,8 @@ function custom_block_category($categories)
 	array_unshift(
 		$categories,
 		array(
-			'slug' => 'nivd_block_category',
-			'title' => 'NIVD'
+			'slug' => 'maygreen_block_category',
+			'title' => 'MayGreen'
 		)
 	);
 
@@ -87,17 +81,21 @@ function custom_block_category($categories)
 
 function custom_login_logo() {
     echo '<style type="text/css">
+
+		body.login {
+			background-color: #F4F3E7;
+		}
 	
-        .login h1 a {
-			background-image: url(https://nivd.world/wp-content/uploads/logo_nivd.svg) ; // Your Logo Here
+    	.login .wp-login-logo a {
+			background-image: url("https://jandcreative-dev.com/may_green_collective/wp-content/uploads/img_logo_maygreencollective.svg") ; // Your Logo Here
 			background-position: center center;
 			background-size: contain;
 			width: 100%;
         }
-
+			
 		.wp-core-ui .button-primary {
-			background: #FF5B22;
-			border-color: #FF5B22;
+			background: #124737;
+			border-color: #124737;
 			color: #fff;
 			text-decoration: none;
 			text-shadow: none;
@@ -110,7 +108,7 @@ function custom_login_logo() {
 add_action('login_head', 'custom_login_logo');
 
 function login_url(){
-return "https://nivd.world/"; // Your URL Here
+return "http://maygreencollective.local/"; // Your URL Here
 }
 add_filter('login_headerurl', 'login_url');
 
@@ -120,27 +118,22 @@ function enable_custom_color_palette_gutenberg() {
         'editor-color-palette',
         [
             [
-                'name'  => esc_html__( 'Accent', 'nivd' ),
-                'slug'  => 'orange',
-                'color' => '#FF5B22',
+                'name'  => esc_html__( 'Accent', 'maygreen' ),
+                'slug'  => 'accent',
+                'color' => '#124737',
             ],
             [
-                'name'  => esc_html__( 'Skin', 'nivd' ),
-                'slug'  => 'skin',
-                'color' => '#FFE6DE',
-            ],
-            [
-                'name'  => esc_html__( 'Skin Soft', 'nivd' ),
-				'slug'  => 'skin-soft',
-                'color' => '#FFEEED',
+                'name'  => esc_html__( 'Skin', 'maygreen' ),
+                'slug'  => 'soft',
+                'color' => '#F4F3E7',
             ],
 			[
-                'name'  => esc_html__( 'Black', 'nivd' ),
+                'name'  => esc_html__( 'Black', 'maygreen' ),
 				'slug'  => 'black',
                 'color' => '#000',
             ],
 			[
-                'name'  => esc_html__( 'White', 'nivd' ),
+                'name'  => esc_html__( 'White', 'maygreen' ),
 				'slug'  => 'white',
                 'color' => '#fff',
             ],
@@ -156,26 +149,10 @@ if(function_exists('acf_add_options_page')) {
 	acf_add_options_page(
 		array(
 			'page_title' => 'General Block Settings',
-			'menu_title' => 'Block Settings',
+			'menu_title' => 'Footer',
 			'menu_slug' => 'theme-general-settings',
 			'capability' => 'edit_posts',
 			'redirect' => false
-		)
-	);
-
-	acf_add_options_sub_page(
-		array(
-			'page_title' => 'Theme Header Settings',
-			'menu_title' => 'Header',
-			'parent_slug' => 'theme-general-settings',
-		)
-	);
-
-	acf_add_options_sub_page(
-		array(
-			'page_title' => 'Theme Footer Settings',
-			'menu_title' => 'Footer',
-			'parent_slug' => 'theme-general-settings',
 		)
 	);
 
