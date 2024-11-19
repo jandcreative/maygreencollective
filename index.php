@@ -8,20 +8,7 @@
 
 
 <?php get_footer(); ?>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<script type="text/javascript" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/js/my-slick.js"></script>
-
-<script src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/js/jquery.event.move.js" type="text/javascript"></script>
-<script src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/js/jquery.twentytwenty.js" type="text/javascript"></script>
-<script>
-    $(function(){
-      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
-      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
-    });
-</script>
+<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
 
 <?php
 // Verifica si el usuario está en un dispositivo móvil
@@ -51,7 +38,6 @@ if (!wp_is_mobile()) {
 </html>
 
 <style>
-
 @media only screen and (max-width: 480px) {
     .reveal-opacity {
         visibility: visible;
@@ -60,7 +46,6 @@ if (!wp_is_mobile()) {
         opacity: 1;
     }
 }
-	
 </style>
 
 
