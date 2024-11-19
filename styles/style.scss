@@ -1,6 +1,13 @@
+/* Reset */
 @import "sass/reset.scss";
-@import "sass/tokens.scss";
+
+/* Typography */
 @import "sass/typography.scss";
+
+/* Tokens */
+@import "sass/tokens.scss";
+
+/* Global */
 @import "sass/global.scss";
 
 /* Header */
@@ -8,9 +15,6 @@
 
 /* Home */
 @import "sass/home.scss";
-
-/* Home */
-@import "sass/legal.scss";
 
 /* Footer */
 @import "sass/footer.scss";
