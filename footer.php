@@ -2,21 +2,12 @@
 	<div class="footer-nav container">
 
 		<div class="logo-footer">
-			<img src="<?php the_field('logo_nivd_footer', 'options'); ?>">
+			<?php the_field('text_social_media', 'options'); ?>
 		</div>
-
-		<div class="links">
-			<?php wp_nav_menu(
-				array(
-					'theme_location' => 'legal',
-					'container' => 'nav',
-					'container_id' => 'legal',
-				)
-			);
-			?>
-		</div>
+		<?php the_field('html_social_media', 'options'); ?>
 	</div>
 
 </footer>
 
 <?php wp_footer() ?>
+
