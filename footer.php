@@ -1,10 +1,13 @@
 <footer>
 	<div class="footer-nav container">
 
-		<div class="logo-footer">
+	<div class="column">
 			<?php the_field('text_social_media', 'options'); ?>
-		</div>
+	</div>
+	<div class="column">
 		<?php the_field('html_social_media', 'options'); ?>
+
+	</div>
 	</div>
 
 </footer>
