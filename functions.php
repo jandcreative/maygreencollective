@@ -31,6 +31,11 @@ endif;
 add_action('after_setup_theme', 'maygreen_support');
 
 
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyBjmxTJ_HAsZ_kOpR7bUbvmpT2hd-yNkhw';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 function add_file_types_to_uploads($file_types) {
 	$new_filetypes = array();
@@ -143,6 +148,58 @@ function enable_custom_color_palette_gutenberg() {
 
 add_action( 'after_setup_theme', 'enable_custom_color_palette_gutenberg' );
 
+function register_taller_post_type() {
+    $labels = [
+        'name'                  => 'Talleres',
+        'singular_name'         => 'Taller',
+        'menu_name'             => 'Talleres',
+        'name_admin_bar'        => 'Taller',
+        'add_new'               => 'Añadir nuevo',
+        'add_new_item'          => 'Añadir nuevo taller',
+        'edit_item'             => 'Editar taller',
+        'new_item'              => 'Nuevo taller',
+        'view_item'             => 'Ver taller',
+        'view_items'            => 'Ver talleres',
+        'all_items'             => 'Todos los talleres',
+        'search_items'          => 'Buscar talleres',
+        'not_found'             => 'No se encontraron talleres',
+        'not_found_in_trash'    => 'No se encontraron talleres en la papelera',
+        'archives'              => 'Archivos de talleres',
+        'attributes'            => 'Atributos de taller',
+    ];
+
+    $args = [
+        'labels'                => $labels,
+        'public'                => true,
+        'publicly_queryable'    => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'query_var'             => true,
+        'rewrite'               => [
+            'slug' => 'talleres',
+            'with_front' => true,
+        ],
+        'capability_type'       => 'post',
+        'has_archive'           => true,
+        'hierarchical'          => false,
+        'menu_position'         => 5,
+        'menu_icon'             => 'dashicons-art',
+        'supports'              => ['title', 'editor', 'thumbnail', 'page-attributes'],
+        'show_in_rest'          => true,
+    ];
+
+    register_post_type('taller', $args);
+}
+add_action('init', 'register_taller_post_type');
+
+
+
+add_filter('show_admin_bar', function($show) {
+    if (is_singular('taller') && current_user_can('administrator')) {
+        return true; // Asegura que la barra se muestre solo para administradores
+    }
+    return $show;
+});
 
 if(function_exists('acf_add_options_page')) {
 
@@ -157,5 +214,8 @@ if(function_exists('acf_add_options_page')) {
 	);
 
 }
+
+
+add_filter( 'gform_enqueue_scripts', '__return_false' );
 
 
