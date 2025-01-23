@@ -1,0 +1,213 @@
+  
+/* Talleres */
+
+/* Intro */
+
+main {
+    padding: 80px 0;
+}
+
+
+body.single .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.single-taller #header-nav .desktop-menu ul li a,
+.post-type-archive #header-nav .desktop-menu ul li a {
+    color: var(--accent);
+}
+
+.post-type-archive .container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.post-type-archive header,
+.single-taller header {
+    position: relative;
+}
+
+.post-type-archive header #header-nav,
+.single-taller header #header-nav{
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--soft);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+section.talleres .intro {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 4em;
+}
+
+section.talleres .intro h1 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: normal;
+    color: var(--accent);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    max-width: 560px;
+    width: 100%;
+}
+
+section.talleres .intro {
+    gap: 20px;
+}
+
+/* Talleres List */
+
+section .talleres-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-gap: 3.5rem 2rem;
+    align-items: baseline;
+    width: 100%;
+    padding-bottom: 120px;
+    align-items: start;
+}
+
+section .talleres-list article {
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+section .talleres-list article span.tag {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: var(--white);
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+section .talleres-list article a {
+    text-decoration: none;
+}
+
+section .talleres-list article:hover {
+    cursor: pointer;
+}
+
+section .talleres-list article .frame-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    width: 100%;
+}
+
+section .talleres-list article .frame-image img {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: 100%;
+    /* Ocupa todo el alto del contenedor */
+    object-fit: cover;
+    /* Recorta la imagen para llenar el contenedor */
+    object-position: center;
+    /* Centra la imagen */
+    display: block;
+    /* Elimina espacios blancos adicionales */
+}
+
+section .talleres-list article .frame-content {
+    background-color: var(--soft);
+    padding: 20px 24px 30px;
+    min-height: 200px;
+}
+
+
+section .talleres-list article .frame-content h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    /* font-size: 28px; */
+    font-size: 26px;
+    color: var(--accent);
+    line-height: normal;
+    margin-bottom: 0;
+    padding-bottom: 6px;
+}
+
+section .talleres-list article .frame-content p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+section .talleres-list article .frame-content a.button {
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+
+section .talleres-list article:hover .frame-content {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+section .talleres-list article:hover h2,
+section .talleres-list article:hover p {
+    color: var(--white);
+}
+
+section .talleres-list article:hover a.button {
+    background-color: var(--white);
+    color: var(--accent);
+}
+
+
+/* Banner */
+
+section.banner {
+    padding: 0;
+    min-height: auto;
+}
+
+section.banner .hero-contact {
+    background-image: linear-gradient(to bottom, rgba(18, 71, 55, .3) 0%, rgba(18, 71, 55, .3) 25%, rgba(18, 71, 55, .3) 75%, rgba(18, 71, 55, .3) 100%), url(https://jandcreative-dev.com/may_green_collective/wp-content/uploads/img_banner.jpg);
+    height: 470px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.banner .hero-contact .container-contact {
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+section.banner .hero-contact .container-contact h2{
+    color: var(--white);
+}
+
+section.banner .hero-contact .container-contact a.button{
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+
+
