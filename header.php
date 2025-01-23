@@ -34,7 +34,7 @@
 		});
 	});
 </script>
-
+<?php wp_head(); ?>
 	<?php
 	// Verifica si el usuario está en un dispositivo móvil
 	if (!wp_is_mobile()) {
@@ -45,7 +45,7 @@
 	<?php
 	}
 	?>
-	<?php wp_head(); ?>
+
 </head>
 
 <body id="top" <?php body_class(); ?>>
