@@ -9,10 +9,8 @@
 /* Typography */
 @font-face {
   font-family: "Better-Grade";
-  src: url("../assets/fonts/Better-Grade.eot");
-  src: url("../assets/fonts/Brockmann-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Better-Grade.svg#Brockmann-Regular") format("svg"), url("../assets/fonts/Better-Grade.ttf") format("truetype"), url("../assets/fonts/Better-Grade.woff") format("woff"), url("../assets/fonts/Better-Grade.woff2") format("woff2");
-}
-/* Tokens */
+  src: url("../assets/fonts/Better-Grade.woff2") format("woff2"), url("../assets/fonts/Better-Grade.woff") format("woff"), url("../assets/fonts/Better-Grade.ttf") format("truetype"), url("../assets/fonts/Better-Grade.eot"); /* Fallback */
+} /* Tokens */
 :root {
   /* Colors */
   --accent: #124737;
@@ -650,6 +648,17 @@ section#proximamente img {
   border-radius: 40px;
 }
 
+/* Map */
+section#contact .map {
+  display: flex;
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+  max-width: 100%;
+}
+
 @media only screen and (max-width: 980px) {
   section#hero {
     background-image: url(" https://jandcreative-dev.com/may_green_collective/wp-content/uploads/img_hero_may_green_collective_02.jpg");
@@ -776,7 +785,433 @@ section#proximamente img {
     grid-gap: 16px;
     margin-top: 10px;
   }
+  section#contact .map {
+    height: 300px;
+  }
 }
+/* Listado Talleres */
+/* Talleres */
+/* Intro */
+main {
+  padding: 80px 0;
+}
+
+body.single .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.single-taller #header-nav .desktop-menu ul li a,
+.post-type-archive #header-nav .desktop-menu ul li a {
+  color: var(--accent);
+}
+
+.post-type-archive .container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.post-type-archive header,
+.single-taller header {
+  position: relative;
+}
+
+.post-type-archive header #header-nav,
+.single-taller header #header-nav {
+  position: relative;
+  padding: 10px 40px;
+  background-color: var(--soft);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+section.talleres .intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 4em;
+}
+
+section.talleres .intro h1 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: normal;
+  color: var(--accent);
+  margin-bottom: 0;
+  padding-bottom: 0;
+  max-width: 560px;
+  width: 100%;
+}
+
+section.talleres .intro {
+  gap: 20px;
+}
+
+/* Talleres List */
+section .talleres-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+  grid-gap: 3.5rem 2rem;
+  align-items: baseline;
+  width: 100%;
+  padding-bottom: 120px;
+  align-items: start;
+}
+
+section .talleres-list article {
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+section .talleres-list article span.tag {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: var(--white);
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+section .talleres-list article a {
+  text-decoration: none;
+}
+
+section .talleres-list article:hover {
+  cursor: pointer;
+}
+
+section .talleres-list article .frame-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+section .talleres-list article .frame-image img {
+  width: 100%;
+  /* Ocupa todo el ancho del contenedor */
+  height: 100%;
+  /* Ocupa todo el alto del contenedor */
+  object-fit: cover;
+  /* Recorta la imagen para llenar el contenedor */
+  object-position: center;
+  /* Centra la imagen */
+  display: block;
+  /* Elimina espacios blancos adicionales */
+}
+
+section .talleres-list article .frame-content {
+  background-color: var(--soft);
+  padding: 20px 24px 30px;
+  min-height: 200px;
+}
+
+section .talleres-list article .frame-content h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  /* font-size: 28px; */
+  font-size: 26px;
+  color: var(--accent);
+  line-height: normal;
+  margin-bottom: 0;
+  padding-bottom: 6px;
+}
+
+section .talleres-list article .frame-content p {
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+section .talleres-list article .frame-content a.button {
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+section .talleres-list article:hover .frame-content {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+section .talleres-list article:hover h2,
+section .talleres-list article:hover p {
+  color: var(--white);
+}
+
+section .talleres-list article:hover a.button {
+  background-color: var(--white);
+  color: var(--accent);
+}
+
+/* Banner */
+section.banner {
+  padding: 0;
+  min-height: auto;
+}
+
+section.banner .hero-contact {
+  background-image: linear-gradient(to bottom, rgba(18, 71, 55, 0.3) 0%, rgba(18, 71, 55, 0.3) 25%, rgba(18, 71, 55, 0.3) 75%, rgba(18, 71, 55, 0.3) 100%), url(https://jandcreative-dev.com/may_green_collective/wp-content/uploads/img_banner.jpg);
+  height: 470px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.banner .hero-contact .container-contact {
+  max-width: 580px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+section.banner .hero-contact .container-contact h2 {
+  color: var(--white);
+}
+
+section.banner .hero-contact .container-contact a.button {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* Single Talleres */
+/* Single */
+main {
+  padding: 80px 0;
+}
+
+.hero-taller .cab-text h1 {
+  font-family: "Roboto Slab", serif;
+  font-size: 55px;
+  color: var(--accent);
+  font-weight: bold;
+  line-height: 66px;
+  padding-bottom: 20px;
+}
+.hero-taller .cab-text p {
+  font-size: 24px;
+  padding-bottom: 1.5rem;
+}
+
+.thumb {
+  position: relative;
+  width: auto;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+  border-radius: 40px;
+  height: 420px;
+}
+.thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.box-feature {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  top: -200px;
+  display: flex;
+  align-items: flex-end;
+}
+.box-feature .container-feature {
+  max-width: 1200px;
+  padding: 0 40px;
+  width: 100%;
+  margin: 0 auto;
+}
+.box-feature .container-feature .flex {
+  display: flex;
+  gap: 2em;
+  padding: 0 2em 2em;
+  justify-content: space-between;
+}
+.box-feature .container-feature .flex .item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.box-feature .container-feature .flex span {
+  font-size: 20px;
+  color: var(--accent);
+  padding-bottom: 8px;
+  display: block;
+}
+.box-feature .container-feature .flex .text p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.single-taller h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 38px;
+  color: var(--accent);
+  font-weight: bold;
+  line-height: normal;
+  padding-bottom: 16px;
+}
+
+section.post {
+  top: -100px;
+  position: relative;
+}
+section.post ul {
+  margin: 0 18px;
+}
+section.post ul li {
+  font-family: "Roboto Slab", serif;
+  color: var(--accent);
+  font-size: 18px;
+  font-style: normal;
+  line-height: 25.5px;
+  margin-bottom: 16px;
+}
+
+body.single-taller .form {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 2em 2em 0.5em;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 1px 2px rgba(0, 0, 0, 0.15);
+  max-width: 420px;
+  width: 100%;
+}
+
+/* body.single-taller .container{ */
+/*     max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    width: 100%;
+    margin-top: 30px; */
+/*     display: flex;
+    gap: 5em; */
+/* 
+} */
+.container.flex-form {
+  display: flex;
+  gap: 5em;
+}
+
+body.single-post form input {
+  border: 1px solid var(--dark);
+  border-radius: 8px;
+}
+
+p.gform_required_legend {
+  display: none;
+}
+
+.gform_wrapper.gravity-theme .gfield_required {
+  color: var(--primary) !important;
+}
+
+.form {
+  max-width: 420px;
+  width: 100%;
+}
+
+.form h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 3px;
+  width: 100%;
+  border-bottom: 1px solid var(--accent);
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+.gform_wrapper.gravity-theme .gfield_label {
+  font-weight: 600;
+}
+
+.ginput_container.ginput_container_consent a {
+  color: var(--primary);
+}
+
+/* .gform_wrapper.gravity-theme .gform_fields {
+    display: grid;
+    grid-column-gap: 2%;
+    -ms-grid-columns: (1fr 2%) [12];
+    grid-row-gap: 16px;
+} */
+.gform_wrapper.gravity-theme .gfield textarea.large {
+  height: 150px !important;
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 8px;
+  border: 1px solid var(--dark);
+  border-radius: 8px;
+  font-family: "Outfit", sans-serif;
+  color: var(--dark);
+  font-size: 16px;
+}
+
+.gform_wrapper.gravity-theme .gfield_label {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+  color: var(--accent);
+}
+
+.form input {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 10px 8px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  border: 1px solid var(--accent);
+  background-color: var(--soft);
+  text-transform: uppercase;
+}
+
+.gform_wrapper.gravity-theme .gform_footer, .gform_wrapper.gravity-theme .gform_page_footer {
+  margin: 6px 0 0;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.gform_page_footer.top_label input {
+  margin: 20px auto;
+  padding: 8px 24px !important;
+  font-weight: 600;
+  color: var(--white) !important;
+  background-color: var(--accent) !important;
+  font-size: 15px;
+  border: none;
+  width: fit-content;
+}
+
 /* Footer */
 footer {
   background-color: var(--white);
@@ -787,30 +1222,46 @@ footer {
   border-radius: 40px 40px 0 0;
   top: -40px;
 }
-footer .logo-footer {
-  text-align: center;
-}
-footer .logo-footer p {
+footer p {
   font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 0;
 }
 footer .footer-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  gap: 24px;
 }
 footer .social-links {
   display: flex;
+  gap: 8px;
+  text-align: center;
   justify-content: center;
-  gap: 14px;
 }
 footer .social-links i {
   font-size: 36px;
   color: var(--accent);
 }
+footer h4 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--black);
+  padding-bottom: 10px;
+}
+
+.footer-nav.container {
+  padding: 0;
+}
 
 @media only screen and (max-width: 480px) {
   footer {
-    padding: 20px 20px 0;
+    padding: 30px 20px 0;
+  }
+  footer h4 {
+    font-size: 18px;
   }
 }
 
