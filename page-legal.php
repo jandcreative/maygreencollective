@@ -5,33 +5,20 @@
 
 <?php get_header(); ?>
 
-<div id="page-wrapper">
+	<div id="page-wrapper">
+		<section class="content-legal">
+			<div class="intro">
+				<h1><?php the_title()?></h1>
+			</div>
+			<div class="container-legal">
+				<div class="block-content">
+					<?php the_content()?>
+				</div>
+			</div>
+		</section>
+	</div>
 
-  <?php while (have_posts()):
-    the_post(); ?>
-
-
-    <section id="legal" class="legal">
-
-      <div class="container">
-        <h1 class="entry-title">
-          <?php the_title(); ?>
-        </h1>
-
-        <div class="content">
-          <?php the_content(); ?>
-        </div>
-
-      </div>
-
-    </section>
-
-  <?php endwhile; ?>
-
-</div>
-
-<?php get_footer(); ?>
+	<?php get_footer(); ?>
 
 </body>
-
 </html>
