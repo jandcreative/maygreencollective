@@ -1,12 +1,10 @@
   
 /* Talleres */
-
 /* Intro */
 
 main {
-    padding: 80px 0;
+    padding: 80px 0 0;
 }
-
 
 body.single .container {
     max-width: 1200px;
@@ -15,7 +13,8 @@ body.single .container {
 }
 
 .single-taller #header-nav .desktop-menu ul li a,
-.post-type-archive #header-nav .desktop-menu ul li a {
+.post-type-archive #header-nav .desktop-menu ul li a,
+.page-template-page-legal #header-nav .desktop-menu ul li a{
     color: var(--accent);
 }
 
@@ -25,12 +24,14 @@ body.single .container {
 }
 
 .post-type-archive header,
-.single-taller header {
+.single-taller header,
+.page-template-page-legal header{
     position: relative;
 }
 
 .post-type-archive header #header-nav,
-.single-taller header #header-nav{
+.single-taller header #header-nav,
+.page-template-page-legal header #header-nav{
     position: relative;
     padding: 10px 40px;
     background-color: var(--soft);
@@ -38,7 +39,6 @@ body.single .container {
 }
 
 section.talleres .intro {
-    max-width: 800px;
     margin: 0 auto;
     text-align: center;
     padding-bottom: 4em;
@@ -46,18 +46,18 @@ section.talleres .intro {
 
 section.talleres .intro h1 {
     font-family: "Roboto Slab", serif;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: normal;
-    color: var(--accent);
-    margin-bottom: 0;
-    padding-bottom: 0;
-    max-width: 560px;
+    max-width: 800px;
     width: 100%;
+    font-size: 55px;
+    color: var(--accent);
+    font-weight: bold;
+    line-height: 66px;
+    padding-bottom: 36px;
+    margin-bottom: 0;
 }
 
 section.talleres .intro {
-    gap: 20px;
+    gap: 0;
 }
 
 /* Talleres List */
@@ -76,7 +76,6 @@ section .talleres-list article {
     border-radius: 40px;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 }
 
 section .talleres-list article span.tag {
@@ -95,10 +94,6 @@ section .talleres-list article span.tag {
 
 section .talleres-list article a {
     text-decoration: none;
-}
-
-section .talleres-list article:hover {
-    cursor: pointer;
 }
 
 section .talleres-list article .frame-image {
@@ -127,11 +122,9 @@ section .talleres-list article .frame-content {
     min-height: 200px;
 }
 
-
 section .talleres-list article .frame-content h2 {
     font-family: "Roboto Slab", serif;
     font-weight: 500;
-    /* font-size: 28px; */
     font-size: 26px;
     color: var(--accent);
     line-height: normal;
@@ -153,7 +146,6 @@ section .talleres-list article .frame-content a.button {
     color: var(--white);
 }
 
-
 section .talleres-list article:hover .frame-content {
     background-color: var(--accent);
     color: var(--white);
@@ -168,7 +160,6 @@ section .talleres-list article:hover a.button {
     background-color: var(--white);
     color: var(--accent);
 }
-
 
 /* Banner */
 
@@ -209,5 +200,86 @@ section.banner .hero-contact .container-contact a.button{
     color: var(--white);
 }
 
+@media only screen and (max-width: 980px) {
+    main {
+        padding: 50px 0 0;
+    }
 
+    section.talleres .intro{
+        padding-bottom: 3rem;
+    }
 
+    section.talleres .intro h1{
+        font-size: 46px;
+        line-height: normal;
+        padding-bottom: 20px;
+    }
+
+    section .talleres-list{
+        grid-gap: 2.5rem 2rem;
+        padding-bottom: 80px;
+    }
+
+    section.banner .hero-contact{
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    main {
+        padding: 30px 0 0;
+    }
+
+    .post-type-archive header #header-nav,
+    .single-taller header #header-nav,
+    .page-template-page-legal header #header-nav{
+        padding: 10px 20px;
+    }
+
+    section.talleres .intro{
+        padding-bottom: 2rem;
+    }
+
+    section.talleres .intro h1{
+        font-size: 36px;
+    }
+    
+    section .talleres-list{
+        grid-gap: 2rem;
+        padding-bottom: 60px;
+    }
+
+    section .talleres-list article .frame-image {
+        height: 260px;
+    }
+
+    section .talleres-list article .frame-content {
+        padding: 20px 20px 26px;
+        min-height: auto;
+    }
+
+    section .talleres-list article .frame-content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    section.banner .hero-contact{
+        height: 300px;
+    }
+
+    section.banner .hero-contact .container-contact h2{
+        font-size: 34px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    section .talleres-list{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+    }
+
+    section .talleres-list article .frame-image {
+        height: 200px;
+    }
+}  
