@@ -1,13 +1,8 @@
 /* Single */
 
+.hero-taller .cab-text {
 
-main {
-    padding: 80px 0;
-}
-
-.hero-taller .cab-text{
-
-    h1{
+    h1 {
         font-family: "Roboto Slab", serif;
         font-size: 55px;
         color: var(--accent);
@@ -16,7 +11,7 @@ main {
         padding-bottom: 20px;
     }
 
-    p{
+    p {
         font-size: 24px;
         padding-bottom: 1.5rem;
     }
@@ -30,6 +25,7 @@ main {
     overflow: hidden;
     border-radius: 40px;
     height: 420px;
+
     img {
         position: absolute;
         top: 0;
@@ -75,7 +71,7 @@ main {
                 display: block;
             }
 
-            .text p{
+            .text p {
                 font-size: 24px;
                 font-weight: bold;
             }
@@ -83,107 +79,112 @@ main {
     }
 }
 
-.single-taller h2{
-        font-family: "Roboto Slab", serif;
-        font-size: 38px;
-        color: var(--accent);
-        font-weight: bold;
-        line-height: normal;
-        padding-bottom: 16px;
+.single-taller h2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 38px;
+    color: var(--accent);
+    font-weight: bold;
+    line-height: normal;
+    padding-bottom: 16px;
 }
 
-section.post{
-    top: -100px;
+.flex-category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 36px;
+}
+
+
+.flex-category span.tag-post {
+    position: relative;
+    background-color: var(--accent);
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    color: var(--white);
+    font-weight: 800;
+}
+
+section.post {
+    top: -150px;
     position: relative;
 
-    ul{
+    ul {
         margin: 0 18px;
 
-    li{
-        font-family: "Roboto Slab", serif;
-        color: var(--accent);
-        font-size: 18px;
-        font-style: normal;
-        line-height: 25.5px;
-        margin-bottom: 16px;
-    }
+        li {
+            font-family: "Roboto Slab", serif;
+            color: var(--accent);
+            font-size: 18px;
+            font-style: normal;
+            line-height: 25.5px;
+            margin-bottom: 16px;
+        }
     }
 }
 
 body.single-taller .form {
     background-color: #fff;
     border-radius: 20px;
-    padding: 2em 2em 0.5em;
+    padding: 1em 2em 0.5em;
     max-width: 420px;
     width: 100%;
     border-radius: 15px;
-    box-shadow: 1px 2px rgba(0,0,0,.15);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     max-width: 420px;
     width: 100%;
+    height: fit-content;
 }
 
-/* body.single-taller .container{ */
-/*     max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 40px;
-    width: 100%;
-    margin-top: 30px; */
-/*     display: flex;
-    gap: 5em; */
-/* 
-} */
-
-.container.flex-form {
+body.single-taller .container.flex-form {
     display: flex;
     gap: 5em;
 }
 
-body.single-post form input {
+body.single-taller form input {
     border: 1px solid var(--dark);
     border-radius: 8px;
 }
 
-p.gform_required_legend {
+body.single-taller p.gform_required_legend {
     display: none;
 }
 
-.gform_wrapper.gravity-theme .gfield_required {
+body.single-taller .gform_wrapper.gravity-theme .gfield_required {
     color: var(--primary) !important;
 }
 
-.form {
-    max-width: 420px;
-    width: 100%;
-}
-
-.form h4 {
+body.single-taller .form h4 {
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 3px;
     width: 100%;
     border-bottom: 1px solid var(--accent);
     color: var(--accent);
+    margin-top: 5px;
     margin-bottom: 5px;
-  
+
 }
 
-.gform_wrapper.gravity-theme .gfield_label {
+body.single-taller .gform_wrapper.gravity-theme .gfield_label {
     font-weight: 600;
 }
 
-.ginput_container.ginput_container_consent a {
+body.single-taller .ginput_container.ginput_container_consent a {
     color: var(--primary);
 }
 
-
-/* .gform_wrapper.gravity-theme .gform_fields {
+body.single-taller .gform_wrapper.gravity-theme .gform_fields {
     display: grid;
-    grid-column-gap: 2%;
-    -ms-grid-columns: (1fr 2%) [12];
-    grid-row-gap: 16px;
-} */
+    grid-row-gap: 10px;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
 
-.gform_wrapper.gravity-theme .gfield textarea.large {
+body.single-taller .gform_wrapper.gravity-theme .gfield textarea.large {
     height: 150px !important;
     font-size: 15px;
     margin-bottom: 0;
@@ -197,7 +198,7 @@ p.gform_required_legend {
 }
 
 
-.gform_wrapper.gravity-theme .gfield_label {
+body.single-taller .gform_wrapper.gravity-theme .gfield_label {
     display: inline-block;
     font-size: 15px;
     font-weight: 600;
@@ -206,7 +207,8 @@ p.gform_required_legend {
     color: var(--accent);
 }
 
-.form input{
+body.single-taller .form input,
+body.single-taller .form select {
     font-size: 15px;
     margin-bottom: 0;
     margin-top: 0;
@@ -219,14 +221,15 @@ p.gform_required_legend {
     text-transform: uppercase;
 }
 
-.gform_wrapper.gravity-theme .gform_footer, .gform_wrapper.gravity-theme .gform_page_footer {
-    margin: 6px 0 0;
-    padding: 16px 0;
-    text-align: center;
+body.single-taller .gform_wrapper.gravity-theme .gform_footer,
+.gform_wrapper.gravity-theme .gform_page_footer {
+    margin: 6px 0 0 !important;
+    padding: 16px 0 8px !important;
+    text-align: center !important;
 }
 
-.gform_page_footer.top_label input {
-    margin: 20px auto;
+body.single-taller .gform_page_footer.top_label input {
+    margin: 10px auto;
     padding: 8px 24px !important;
     font-weight: 600;
     color: var(--white) !important;
@@ -234,4 +237,320 @@ p.gform_required_legend {
     font-size: 15px;
     border: none;
     width: fit-content;
+}
+
+body.single-taller .form label.gfield_consent_label {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-family: "Roboto Slab", serif;
+    margin-bottom: 0 !important;
+    color: var(--accent) !important;
+}
+
+body.single-taller .form fieldset {
+    border: 0;
+}
+
+
+body.single-taller .form .ginput_container.ginput_container_consent input {
+    width: auto;
+}
+
+.gform_wrapper.gravity-theme .gf_progressbar_percentage.percentbar_green {
+    background-color: var(--accent) !important;
+}
+
+.cursos-relacionadas h2 {
+    font-size: 48px;
+    text-align: center;
+    display: block;
+    padding-bottom: 40px;
+}
+
+.background-relacionados {
+    background-color: var(--accent);
+    padding: 80px 0 120px;
+}
+
+section .talleres-relacionados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-gap: 3.5rem 2rem;
+    align-items: baseline;
+    width: 100%;
+    align-items: start;
+}
+
+section .talleres-relacionados article {
+    max-width: 400px;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+section .talleres-relacionados article span.tag {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: var(--white);
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+section .talleres-relacionados article a {
+    text-decoration: none;
+}
+
+section .talleres-relacionados article .frame-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    width: 100%;
+}
+
+section .talleres-relacionados article .frame-image img {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: 100%;
+    /* Ocupa todo el alto del contenedor */
+    object-fit: cover;
+    /* Recorta la imagen para llenar el contenedor */
+    object-position: center;
+    /* Centra la imagen */
+    display: block;
+    /* Elimina espacios blancos adicionales */
+}
+
+section .talleres-relacionados article .frame-content {
+    background-color: var(--soft);
+    padding: 20px 24px 30px;
+    min-height: 200px;
+}
+
+section .talleres-relacionados article .frame-content h3 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    /* font-size: 28px; */
+    font-size: 26px;
+    color: var(--accent);
+    line-height: normal;
+    margin-bottom: 0;
+    padding-bottom: 6px;
+}
+
+section .talleres-relacionados article .frame-content p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+section .talleres-relacionados article .frame-content a.button {
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+section .talleres-relacionados article:hover a.button {
+    background-color: var(--white);
+    color: var(--accent);
+}
+
+div#gform_confirmation_wrapper_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+div#gform_confirmation_message_3 {
+    font-size: 22px;
+}
+
+body.single-taller .map.acf-map {
+    display: flex;
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 980px) {
+    body.single-taller .container.flex-form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-taller .cab-text h1 {
+        font-size: 46px;
+        line-height: normal;
+        padding-bottom: 20px;
+    }
+
+    .box-feature {
+        top: 0;
+        margin-top: 60px;
+        height: auto;
+    }
+
+    .box-feature .container-feature .flex {
+        gap: 1em;
+        padding: 2em;
+        flex-direction: column;
+        /* align-items: center; */
+    }
+
+    body.single-taller .container.flex-form {
+        padding-bottom: 80px;
+    }
+
+    section.post {
+        top: 0;
+        position: relative;
+    }
+
+    .flex-category {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    section .talleres-relacionados {
+        grid-gap: 2.5rem 2rem;
+    }
+    
+
+    .background-relacionados {
+        padding: 60px 0 100px;
+    }
+}
+
+@media only screen and (max-width: 726px) {
+    section .talleres-relacionados{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .hero-taller .cab-text h1 {
+        font-size: 36px;
+        padding-bottom: 10px;
+    }
+
+    .hero-taller .cab-text p {
+        font-size: 20px;
+        padding-bottom: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .hero-taller .thumb {
+        height: 280px;
+    }
+
+    .hero-taller .box-feature {
+        margin-top: 30px;
+    }
+
+    .box-feature .container-feature {
+        padding: 0 20px;
+    }
+
+    .box-feature .container-feature .flex {
+        gap: 1em;
+        padding: 2em 0;
+        flex-direction: column;
+        /* align-items: center; */
+    }
+
+    .single-taller h2 {
+        font-size: 28px;
+        padding-bottom: 16px;
+    }
+
+    section.cursos-relacionadas h2 {
+        font-size: 36px;
+        line-height: normal;
+    }
+
+    body.single-taller .container.flex-form {
+        padding-bottom: 40px;
+    }
+
+    .box-feature .container-feature .flex .item {
+        align-items: flex-start;
+    }
+
+    .box-feature .container-feature .flex span {
+        padding-bottom: 4px;
+    }
+
+    .box-feature .container-feature .flex .text p {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    body.single .container {
+        padding: 0 20px;
+    }
+
+    body.single-taller .form {
+        padding: 1em 1.5em 0;
+    }
+
+    section .talleres-relacionados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2em;
+        align-items: center;
+    }
+
+    section .talleres-relacionados article .frame-image {
+        height: 260px;
+    }
+
+    section .talleres-relacionados article .frame-content {
+        padding: 20px 20px 26px;
+        min-height: auto;
+    }
+
+    section .talleres-relacionados article .frame-content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    .background-relacionados {
+        padding: 40px 0 80px;
+    }
+
+    section .talleres-relacionados{
+        grid-gap: 2rem;
+    }
+
+    body.single .block-spacer.medium {
+        height: 16px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    section .talleres-relacionados article .frame-image {
+        height: 200px;
+    }
 }
