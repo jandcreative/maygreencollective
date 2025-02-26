@@ -10,36 +10,42 @@ global $wp_query;
         <div class="intro">
             <img src="https://jandcreative-dev.com/may_green_collective/wp-content/uploads/icon_maygreencollective_pink-1.svg">
             <h1>Descubre todos nuestros talleres artesanales<!-- <?php the_field('title_intro_interioristas', 'options'); ?> --></h1>
-            <p>Prepárate para un nuevo espacio en el corazón de Santa Cruz de Tenerife, donde moda, diseño y sostenibilidad se encuentran! En nuestro concept store, encontrarás productos locales y éticos, cuidadosamente seleccionados para un estilo de vida consciente.</p>
+            <p>En <strong>May Green Collective</strong>, te invitamos a explorar el arte de crear con tus propias manos. Nuestros talleres están diseñados para conectar con la naturaleza, fomentar la creatividad y aprender técnicas artesanales sostenibles de la mano de expertos locales.</p>
+            <p>Tanto si eres principiante como si ya tienes experiencia, encontrarás un espacio acogedor donde transformar materiales naturales en piezas únicas. Cada sesión es una oportunidad para compartir, aprender y desarrollar nuevas habilidades en un entorno colaborativo y respetuoso con el medio ambiente.</p>
+            <p>¡Ven a descubrir todo lo que puedes crear y sé parte de la comunidad de <strong>May Green Collective</strong>!</p>
         </div>
     </section>
 
     <section class="layout-talleres">
         <div class="container">
 
-            <!--     <div class="container-filter">
-                    <?php echo do_shortcode('[facetwp facet="fecha"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="ubicacin"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="categories"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="metodologia"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="ponente"]'); ?>
-            </div> -->
-            <div class="talleres-list">
+
+
+            <div class="container-filter">
+
+            <?php echo do_shortcode('[facetwp facet="listado"]'); ?>
+
+            </div>
+   
                 <?php $args = array(
-                    'post_type'      => 'taller', // Reemplaza 'tu_cpt' con el nombre de tu CPT
-                    'posts_per_page' => -1,       // Mostrar todos los posts
-                    'orderby'        => 'date',  // Ordenar por el título
-                    'order'          => 'DESC',    // Orden ascendente (A a Z)
+                    'post_type' => 'taller',
+                    'post_status' => 'publish',
+                    'meta_key'       => 'fecha',
+                    'orderby'        => 'meta_value', 
+                    'order'          => 'ASC', 
                 );
                 $query = new WP_Query($args);
 
+
                 if ($query->have_posts()) { ?>
-                    <?php
-                    while (have_posts()) {
-                        the_post();
-                    ?>
+
+            <div class="facetwp-template talleres-list" >
+
+                    <?php while ($query->have_posts()) {
+                        $query->the_post();
+                        ?>
                         <article>
-                            <a href="<?php the_permalink(); ?>">
+                           
                                 <div class="frame-image">
                                     <?php
                                     $terms = get_the_terms(get_the_ID(), 'categorias_talleres');
@@ -55,32 +61,32 @@ global $wp_query;
                                 <div class="frame-content">
                                     <h2><?php the_title(); ?></h2>
                                     <?php the_excerpt(); ?>
-                                    <a class="button">INSCRÍBETE</a>
+                                    <a href="<?php the_permalink(); ?>" class="button">INSCRÍBETE</a>
                                 </div>
-                            </a>
+                           
                         </article>
-                    <?php
-                    }
-                    ?>
+                        <?php
+			} ?>
+		</div>
+		<?php } else {
+			// No se encontraron posts
+			echo 'No hay eventos disponibles.';
+		}
 
-                <?php
-                }
-                // Restaura la consulta global después de usar WP_Query
-                wp_reset_postdata();
-                ?>
-
-
-
-            </div>
+		// Restablecer Post Data
+		wp_reset_postdata();
+		?>
             <!-- 		<div class="block-espacer"></div> -->
         </div>
     </section>
 
+
+      
     <section class="banner">
         <div class="hero-contact">
             <div class="container-contact">
                 <h2>Conoce más sobre MayGreenCollective</h2>
-                <a class="button" href="#">Ver Valores</a>
+                <a class="button" href="https://www.maygreencollective.es/#valores">Ver Valores</a>
             </div>
         </div>
     </section>
@@ -88,7 +94,7 @@ global $wp_query;
 </main>
 
 
-<script>
+<!-- <script>
     document.addEventListener('facetwp-loaded', function() {
         if (!window.facetwpRefreshed) {
             setTimeout(function() {
@@ -97,7 +103,7 @@ global $wp_query;
             }, 500);
         }
     });
-</script>
+</script> -->
 
 <?php
 get_footer();
@@ -106,3 +112,14 @@ get_footer();
 </body>
 
 </html>
+
+<style>
+    .container-filter {
+    display: flex;
+    gap: 12px 24px;
+    position: relative;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+}
+
+</style>
