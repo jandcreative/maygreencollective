@@ -72,13 +72,40 @@ header.nav-up #header-nav .desktop-menu ul li a{
     width: 35px;
     height: 76px;
     background-repeat: no-repeat;
-    transition: 1s;
+/*     transition: 1s; */
     cursor: pointer;
 }
 body.top .logo {
-    background-image: url('https://jandcreative-dev.com/may_green_collective/wp-content/uploads/icon_maygreencollective_pink.svg');
-    width: 30px;
-    height: 64px;
+    /* background-image: url('https://jandcreative-dev.com/may_green_collective/wp-content/uploads/icon_maygreencollective_pink.svg'); */
+    background-image: url('https://www.maygreencollective.es/wp-content/uploads/logo_xs.svg');
+    width: 61px;
+    height: 60px;
+   /*  width: 76px;
+    height: 75px; */
+   /*  transform: scale(0.8); */
+ /*    width: 30px;
+    height: 64px; */
+  /*   background-image: url('http://maygreencollective.local/wp-content/uploads/logo.svg');
+    width: 76px;
+    height: 75px; */
+}
+
+body.archive .logo,
+body.single .logo,
+body.page-template-page-legal .logo{
+    transition: all 800ms ease-in-out;
+    background-image: url('https://www.maygreencollective.es/wp-content/uploads/logo.svg');
+    width: 76px;
+    height: 75px;
+}
+
+body.archive.top .logo,
+body.single.top .logo,
+body.page-template-page-legal.top .logo{
+    background-image: url('https://www.maygreencollective.es/wp-content/uploads/logo_xs.svg');
+    width: 60px;
+    height: 59px;
+   /*  transform: scale(0.8); */
 }
 
 .full-menu {
@@ -92,25 +119,36 @@ body.top .logo {
         display: none;
     }
 
+    body.home #hamburguer.mobile{
+        background-color: transparent!important; 
+    }
+
     #hamburguer.mobile {
         display: block;
         position: fixed;
         right: 32px;
-        top: 2.2em;
+        background-color: var(--soft);
+        /* top: 2.2em; */
+        top: 1em;
         width: 4em;
         height: 4em;
         z-index: 1000000;
-        border-radius: 8px 0 0 8px;
+        border-radius: 8px;
+        /* border-radius: 8px 0 0 8px; */
         cursor: pointer;
-        transition: all 600ms ease-in-out;
+        transition: all 800ms ease-in-out;
     }
     
     body.top #hamburguer.mobile{
         top: 0.8em;
     }
 
+    body.home  #hamburguer.mobile .lines{
+        background-color: var(--white); 
+    }
+
     #hamburguer.mobile .lines {
-        background-color: var(--white);
+        background-color: var(--accent);
         width: 70%;
         height: 4px;
         margin: 6px 0;
@@ -192,7 +230,7 @@ body.top .logo {
     }
 
     #hamburguer.mobile{
-        top: 1.4em;
+     /*    top: 1.4em; */
         right: 12px;
     }
 
