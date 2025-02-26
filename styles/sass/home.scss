@@ -217,7 +217,7 @@ div#gform_fields_1 label {
 
 input#input_1_5_1 {
     width: auto !important;
-    z-index: 10;
+    z-index: 0;
     position: relative;
     overflow: visible;
 }
@@ -436,7 +436,7 @@ section#contact .map{
 
     /* Asegura que el checkbox sea visible y clickeable */
     div#gform_fields_1 input#input_1_5_1[type="checkbox"] {
-        z-index: 9999; /* Asegura que esté encima de otros elementos */
+        z-index: 0; /* Asegura que esté encima de otros elementos */
         position: relative;
         pointer-events: auto; /* Asegura que los eventos de puntero estén habilitados */
         visibility: visible; /* Asegura que el checkbox sea visible */
