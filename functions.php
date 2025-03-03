@@ -428,3 +428,118 @@ if(function_exists('acf_add_options_page')) {
 add_filter( 'gform_enqueue_scripts', '__return_false' );
 
 
+/* WooCommerce */
+
+add_action( 'after_setup_theme', 'enable_wc_gallery_features' );
+function enable_wc_gallery_features() {
+    add_theme_support( 'wc-product-gallery-slider' ); // Activa el slider con flechas
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+}
+
+function move_product_meta_before_title() {
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 ); // Elimina la meta original
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 4); // La coloca antes del título
+}
+add_action( 'wp', 'move_product_meta_before_title' );
+
+function show_review_count_after_price() {
+    global $product;
+
+    // 🔹 Contador de reseñas
+    $review_count = $product->get_review_count();
+    
+    echo '<div class="product-review-count">';
+    echo '<strong>Reseñas:</strong> ' . $review_count . ' valoraciones';
+    echo '</div>';
+}
+add_action( 'woocommerce_single_product_summary', 'show_review_count_after_price', 10 ); // Justo después del precio
+
+/* // Modificar las clases de los precios regulares y rebajados
+function custom_woocommerce_price_classes( $price, $product ) {
+    // Si el producto está en oferta, se modifica la clase del precio rebajado
+    if ( $product->is_on_sale() ) {
+        // Agrega la clase 'sale-price' al precio rebajado
+        $price = preg_replace( '/class="woocommerce-Price-amount/', 'class="woocommerce-Price-amount sale-price', $price );
+    } else {
+        // Agrega la clase 'regular-price' al precio normal
+        $price = preg_replace( '/class="woocommerce-Price-amount/', 'class="woocommerce-Price-amount regular-price', $price );
+    }
+    return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'custom_woocommerce_price_classes', 10, 2 ); */
+
+
+function show_product_collection_after_price() {
+    global $product;
+
+    // Obtiene las colecciones asignadas al producto
+    $terms = get_the_terms( $product->get_id(), 'coleccion' );
+
+    if ( $terms && ! is_wp_error( $terms ) ) {
+        echo '<div class="product-collection">COLECCIÓN';
+        $collections = array();
+
+        foreach ( $terms as $term ) {
+            $collections[] = '<a href="' . get_term_link( $term ) . '">' . esc_html( $term->name ) . '</a>';
+        }
+
+        echo implode( ', ', $collections ) . '</div>';
+    }
+}
+add_action( 'woocommerce_single_product_summary', 'show_product_collection_after_price', 11 );
+
+
+// Reemplazar la descripción corta con la descripción larga en la ficha del producto
+function custom_woocommerce_product_description() {
+    global $product;
+
+    // Obtener la descripción larga del producto
+    $long_description = apply_filters( 'the_content', $product->get_description() );
+
+    echo '<div class="woocommerce-product-details__long-description">';
+    echo $long_description;
+    echo '</div>';
+}
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 ); // Elimina la descripción corta
+add_action( 'woocommerce_single_product_summary', 'custom_woocommerce_product_description', 20 ); // Muestra la descripción larga en su lugar
+
+// Eliminar las pestañas de WooCommerce
+function remove_product_tabs( $tabs ) {
+    // Elimina todas las pestañas
+    unset( $tabs['description'] );   // Descripción
+    unset( $tabs['additional_information'] ); // Información adicional
+    
+    return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'remove_product_tabs', 98 );
+
+
+// Desactivar el sidebar en la página de productos de WooCommerce
+function remove_woocommerce_sidebar() {
+    if ( is_shop() || is_product_category() || is_product() ) {
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+    }
+}
+add_action( 'template_redirect', 'remove_woocommerce_sidebar' );
+
+
+// Cambiar el texto de "Productos Relacionados"
+function custom_woocommerce_related_products_title( $title ) {
+    if ( is_product() ) {
+        $title = 'También te recomendamos:'; // Cambiar por el texto deseado
+    }
+    return $title;
+}
+add_filter( 'woocommerce_product_related_products_heading', 'custom_woocommerce_related_products_title' );
+
+
+function custom_related_products_title() {
+    echo '<h3 class="woocommerce-loop-product__title">' . get_the_title() . '</h3>';
+}
+
+// Quitamos el título original (general para todos los productos)
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+
+// Agregamos el nuevo título SOLO en productos relacionados
+add_action( 'woocommerce_shop_loop_item_title', 'custom_related_products_title', 10 );
