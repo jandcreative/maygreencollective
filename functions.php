@@ -39,6 +39,24 @@ endif;
 add_action('after_setup_theme', 'maygreen_support');
 
 
+/* function filtrar_productos_por_etiqueta($query) {
+    if (!is_admin() && $query->is_main_query() && (is_shop() || is_product_taxonomy() || is_tax('product_cat'))) {
+
+        if (isset($_GET['filter_tag']) && !empty($_GET['filter_tag'])) {
+            $query->set('tax_query', array(
+                array(
+                    'taxonomy' => 'product_tag',
+                    'field'    => 'slug',
+                    'terms'    => array(sanitize_text_field($_GET['filter_tag'])),
+                    'operator' => 'IN',
+                ),
+            ));
+        }
+    }
+}
+add_action('pre_get_posts', 'filtrar_productos_por_etiqueta', 20); */
+
+
 function my_acf_google_map_api( $api ){
     $api['key'] = 'AIzaSyBjmxTJ_HAsZ_kOpR7bUbvmpT2hd-yNkhw';
     return $api;
@@ -95,7 +113,7 @@ function custom_block_category($categories)
   // Obtén las categorías de la taxonomía personalizada 'categorias_talleres' del post actual
         
    
-
+/* Mostrar talleres relacionados */
 function mostrar_entradas_relacionadas(){
 
     // Obtener categorías de la entrada actual
@@ -517,7 +535,7 @@ add_filter( 'woocommerce_product_tabs', 'remove_product_tabs', 98 );
 
 // Desactivar el sidebar en la página de productos de WooCommerce
 function remove_woocommerce_sidebar() {
-    if ( is_shop() || is_product_category() || is_product() ) {
+    if ( is_shop() || is_product_category() || is_tax( 'coleccion' )  || is_product() ) {
         remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
     }
 }
@@ -543,3 +561,66 @@ remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pr
 
 // Agregamos el nuevo título SOLO en productos relacionados
 add_action( 'woocommerce_shop_loop_item_title', 'custom_related_products_title', 10 );
+
+
+
+/* Filtrado de Categeoria */
+function filter_products_by_tag_category($query) {
+    if (!is_admin() && $query->is_main_query()) {
+        // Comprobar si estamos en una tienda o categoría de productos
+        if (is_product_category() || is_shop()) {
+            // Obtener la categoría actual
+            $current_category = get_queried_object();
+            if (isset($_GET['filter_tag']) && !empty($_GET['filter_tag'])) {
+                $tag_slug = sanitize_text_field($_GET['filter_tag']);
+                $query->set('tax_query', array(
+                    array(
+                        'taxonomy' => 'product_tag',
+                        'field'    => 'slug',
+                        'terms'    => $tag_slug,
+                    ),
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field'    => 'id',
+                        'terms'    => $current_category->term_id,
+                        'operator' => 'IN',
+                    ),
+                ));
+            } else {
+                // Si no hay etiqueta seleccionada, solo mostramos los productos de la categoría
+                $query->set('tax_query', array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field'    => 'id',
+                        'terms'    => $current_category->term_id,
+                        'operator' => 'IN',
+                    ),
+                ));
+            }
+        }
+    }
+}
+add_action('pre_get_posts', 'filter_products_by_tag_category');
+
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+
+
+
+// Filtrar productos sin precio en todas las páginas de WooCommerce
+function ocultar_productos_sin_precio( $query ) {
+    // Verificar si estamos en la página de WooCommerce (tienda, categoría, o producto individual)
+    if ( ! is_admin() && $query->is_main_query() && ( is_shop() || is_product_category() || is_product() || is_archive() ) ) {
+        // Filtrar productos sin precio
+        $meta_query = $query->get( 'meta_query', array() );
+        
+        // Añadir condición para excluir productos sin precio
+        $meta_query[] = array(
+            'key'     => '_price',
+            'value'   => 0,
+            'compare' => '>',
+        );
+        
+        $query->set( 'meta_query', $meta_query );
+    }
+}
+add_action( 'pre_get_posts', 'ocultar_productos_sin_precio' );
