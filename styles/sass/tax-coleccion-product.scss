@@ -1,0 +1,17 @@
+
+.tax-coleccion header #header-nav {
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--soft);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tax-coleccion main {
+    padding: 180px 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tax-coleccion #header-nav .desktop-menu ul li a {
+    color: var(--accent);
+}
