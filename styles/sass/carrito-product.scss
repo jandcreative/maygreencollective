@@ -1,0 +1,134 @@
+/* Carrito Producto */
+.page-template-page-carrito main {
+    padding: 160px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul.list-inline-breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 0;
+}
+
+.intro-cart .woocommerce-breadcrumb a,
+ul.list-inline-breadcrumb a{
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: bold;
+}
+.intro-cart .woocommerce-breadcrumb {
+    color: var(--accent);
+    font-size: 15px;
+}
+
+.intro-cart h1{
+    font-family: "Roboto Slab", serif;
+    width: 100%;
+    font-size: 60px;
+    color: var(--accent);
+    font-weight: bold;
+    line-height: 66px;
+    margin-bottom: 20px;
+}
+
+.page-template-page-carrito header #header-nav{
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--soft);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.page-template-page-carrito .wc-block-components-main.wc-block-cart__main.wp-block-woocommerce-cart-items-block,
+.wc-block-components-sidebar-layout .wc-block-components-main {
+    background-color: var(--soft);
+   /*  padding: 2em!important; */
+    padding: 2em 2em 2em 1.5em !important;
+    border-radius: 4px;
+}
+
+.page-template-page-carrito table.wc-block-cart-items .wc-block-cart-items__header{
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--accent)!important;
+}
+
+.page-template-page-carrito table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__image img{
+    border-radius: 8px;
+}
+
+.page-template-page-carrito .wc-block-components-main.wc-block-cart__main.wp-block-woocommerce-cart-items-block .wc-block-cart-item__prices {
+    display: none;
+}
+
+.page-template-page-carrito .wc-block-components-product-metadata__description {
+    display: none;
+}
+
+.page-template-page-carrito .wc-block-components-quantity-selector{
+    background-color: var(--white)!important;
+}
+
+.page-template-page-carrito .wc-block-components-sidebar.wc-block-cart__sidebar.wp-block-woocommerce-cart-totals-block{
+    padding-left: 5%!important;
+}
+
+.page-template-page-carrito a.wc-block-components-product-name {
+    font-size: 18px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.page-template-page-carrito span.wc-block-formatted-money-amount.wc-block-components-formatted-money-amount.wc-block-components-product-price__value{
+    font-size: 20px;
+    color: var(--pink);
+    font-weight: 600;
+    text-decoration: none;
+    line-height: normal;
+}
+
+.page-template-page-carrito .wc-block-cart__submit-container a{
+    background-color: var(--accent);
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.page-template-page-carrito .wc-block-cart__submit-container a span{
+    font-weight: 600;
+    font-family: "Roboto", serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--white);
+}
+
+button.wc-block-components-button.wp-element-button.wc-block-components-checkout-place-order-button.contained{
+    font-weight: 600;
+    font-family: "Roboto", serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--accent);
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+}
+
+.wc-block-components-title.wc-block-components-title{
+    font-size: 22px!important;
+    line-height: normal;
+}
+
+.wc-block-components-form .wc-block-components-checkout-step{
+    margin: 0 0 36px;
+}
+
+.page-template-page-carrito .wp-block-woocommerce-checkout-actions-block .wc-block-checkout__actions_row{
+    justify-content: center;
+}
+
+.wc-block-components-main.wc-block-checkout__main.wp-block-woocommerce-checkout-fields-block a{
+    color: var(--accent);
+}
