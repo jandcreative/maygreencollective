@@ -43,12 +43,16 @@ header.nav-up #header-nav{
     position: relative;
 }
 
+.home #header-nav .desktop-menu ul li a {
+    color: var(--white);
+}
+
 #header-nav .desktop-menu ul li a {
     position: relative;
     font-size: 16px;
     font-family: "Roboto Slab", serif;
     text-decoration: none;
-    color: var(--white);
+    color: var(--accent);
     transition: 0.25s;
     opacity: 1;
     padding: 5px 8px;
@@ -92,6 +96,7 @@ body.top .logo {
 
 body.archive .logo,
 body.single .logo,
+body.page-template-page-carrito .logo,
 body.page-template-page-legal .logo{
     transition: all 800ms ease-in-out;
     background-image: url('https://www.maygreencollective.es/wp-content/uploads/logo.svg');
@@ -101,7 +106,9 @@ body.page-template-page-legal .logo{
 
 body.archive.top .logo,
 body.single.top .logo,
-body.page-template-page-legal.top .logo{
+body.page-template-page-carrito .logo,
+body.page-template-page-legal.top .logo
+{
     background-image: url('https://www.maygreencollective.es/wp-content/uploads/logo_xs.svg');
     width: 60px;
     height: 59px;
