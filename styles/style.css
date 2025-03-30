@@ -2377,7 +2377,8 @@ ul.products img {
 /* Intro */
 .woocommerce-products-header-coleccion {
   background-color: var(--accent);
-  height: 450px;
+  min-height: 550px;
+  height: auto;
   position: relative;
   border-radius: 0 0 40px 40px;
   display: flex;
@@ -2389,18 +2390,18 @@ ul.products img {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
-  padding: 0 40px;
+  padding: 0 40px 40px;
 }
 .woocommerce-products-header-coleccion .container-coleccion h1 {
   color: var(--pink);
 }
-.woocommerce-products-header-coleccion .container-coleccion p.intro-coleccion {
+.woocommerce-products-header-coleccion .container-coleccion div.intro-coleccion p {
   color: var(--white);
   font-size: 20px;
   line-height: 29px;
-  margin-bottom: 0;
+  margin-bottom: 16px;
 }
 
 /* Contenido */
