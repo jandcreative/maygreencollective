@@ -19,74 +19,64 @@ global $wp_query;
     <section class="layout-talleres">
         <div class="container">
 
-
-
-            <div class="container-filter">
-
-            <?php echo do_shortcode('[facetwp facet="listado"]'); ?>
-
-            </div>
-   
-                <?php $args = array(
-                    'post_type' => 'taller',
-                    'post_status' => 'publish',
-                    'meta_key'       => 'fecha',
-                    'orderby'        => 'meta_value', 
-                    'order'          => 'ASC', 
+            <!--     <div class="container-filter">
+                    <?php echo do_shortcode('[facetwp facet="fecha"]'); ?>
+                    <?php echo do_shortcode('[facetwp facet="ubicacin"]'); ?>
+                    <?php echo do_shortcode('[facetwp facet="categories"]'); ?>
+                    <?php echo do_shortcode('[facetwp facet="metodologia"]'); ?>
+                    <?php echo do_shortcode('[facetwp facet="ponente"]'); ?>
+            </div> -->
+            <div class="talleres-list">
+                <?php
+                $args = array(
+                    'post_type'      => 'taller', // Nombre del CPT
+                    'posts_per_page' => -1,       
+                    'orderby'        => 'date',  
+                    'order'          => 'DESC',  
                 );
                 $query = new WP_Query($args);
 
-
-                if ($query->have_posts()) { ?>
-
-            <div class="facetwp-template talleres-list" >
-
-                    <?php while ($query->have_posts()) {
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
                         $query->the_post();
                         ?>
                         <article>
-                           
-                                <div class="frame-image">
-                                    <?php
-                                    $terms = get_the_terms(get_the_ID(), 'categorias_talleres');
-
-                                    if ($terms && !is_wp_error($terms)) {
-                                        foreach ($terms as $term) {
-                                            echo '<span class="tag">' . esc_html($term->name) . '</span>';
-                                        }
+                            <div class="frame-image">
+                                <?php
+                                $terms = get_the_terms(get_the_ID(), 'categorias_talleres');
+                                if ($terms && !is_wp_error($terms)) {
+                                    foreach ($terms as $term) {
+                                        echo '<span class="tag">' . esc_html($term->name) . '</span>';
                                     }
-                                    ?>
-                                    <?php the_post_thumbnail(); ?>
-                                </div>
-                                <div class="frame-content">
-                                    <h2><?php the_title(); ?></h2>
-                                    <?php the_excerpt(); ?>
-                                    <a href="<?php the_permalink(); ?>" class="button">INSCRÍBETE</a>
-                                </div>
-                           
+                                }
+                                ?>
+                                <?php the_post_thumbnail(); ?>
+                            </div>
+                            <div class="frame-content">
+                                <h2><?php the_title(); ?></h2>
+                                <?php the_excerpt(); ?>
+                                <a href="<?php the_permalink(); ?>" class="button">INSCRÍBETE</a>
+                            </div>
                         </article>
                         <?php
-			} ?>
-		</div>
-		<?php } else {
-			// No se encontraron posts
-			echo 'No hay eventos disponibles.';
-		}
+                    }
+                    wp_reset_postdata();
+                } else {
+                    echo '<p>No hay talleres disponibles en este momento.</p>';
+                }
+                ?>
 
-		// Restablecer Post Data
-		wp_reset_postdata();
-		?>
+
+            </div>
             <!-- 		<div class="block-espacer"></div> -->
         </div>
     </section>
 
-
-      
     <section class="banner">
         <div class="hero-contact">
             <div class="container-contact">
                 <h2>Conoce más sobre MayGreenCollective</h2>
-                <a class="button" href="https://www.maygreencollective.es/#valores">Ver Valores</a>
+                <a class="button" href="https://www.maygreencollective.es/sobre-nosotros/#valores">Ver Valores</a>
             </div>
         </div>
     </section>
@@ -112,14 +102,3 @@ get_footer();
 </body>
 
 </html>
-
-<style>
-    .container-filter {
-    display: flex;
-    gap: 12px 24px;
-    position: relative;
-    flex-wrap: wrap;
-    padding-bottom: 40px;
-}
-
-</style>
