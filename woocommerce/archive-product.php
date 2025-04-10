@@ -21,8 +21,17 @@ get_header( 'shop' ); ?>
         <?php endif; ?>
 
         <!-- Texto de introducción -->
-        <p class="intro-categoria">
-        Debido a nuestra filosofía de sostenibilidad, tenemos muy claro que menos es más, especialmente cuando se trata de moda. Las camisetas de algodón orgánico reflejan una estética limpia y sencilla, prot una experiencia de uso más cómoda y libre de complicaciones.
+     <p class="intro-categoria">
+        <?php 
+            // Obtiene el ID de la categoría de producto actual
+            $term = get_queried_object();
+            $descripcion_categoria = get_field('descripcion_categoria', $term); 
+
+            // Si hay contenido en ACF, lo muestra; de lo contrario, usa un texto predeterminado.
+            if ($descripcion_categoria) {
+                echo esc_html($descripcion_categoria);
+            }
+        ?>
         </p>
 
       <!-- Filtrado por etiquetas -->
