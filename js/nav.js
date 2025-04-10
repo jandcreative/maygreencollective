@@ -12,6 +12,12 @@ jQuery(document).ready(function ($) {
       $('#page-wrapper').addClass('top');
     }
     else {
+      $('.mega-sub-menu').removeClass('top');
+    }
+    if ($(window).scrollTop()) {
+      $('.mega-sub-menu').addClass('top');
+    }
+    else {
       $('#page-wrapper').removeClass('top');
     }
     if ($(window).scrollTop()) {
