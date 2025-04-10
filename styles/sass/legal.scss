@@ -1,12 +1,16 @@
 body.page-template-page-legal div#page-wrapper {
-    background-color: #fff;
+    background-color: var(--white);
+}
+
+body.page-template-page-legal header{
+    position: relative;
 }
 
 section.content-legal {
     max-width: 840px;
     width: 100%;
     margin: 0 auto;
-    padding: 160px 40px 140px;
+    padding: 100px 40px 140px;
 }
 
 section.content-legal h1 {
@@ -74,8 +78,9 @@ section.content-legal a {
     }
 
     section.content-legal h1 {
-        font-size: 40px;
+        font-size: 36px;
         text-align: center;
         line-height: normal;
+        padding-bottom: 24px;
     }
 }
