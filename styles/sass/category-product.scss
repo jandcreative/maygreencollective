@@ -5,19 +5,19 @@
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
-.tax-product_cat #header-nav .desktop-menu ul li a{
+.tax-product_cat #header-nav .desktop-menu ul li a {
     color: var(--accent);
 }
 
 .tax-product_cat main {
-    padding: 160px 40px 0;
+    padding: 240px 40px 0;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 80px;
 }
 
-.tax-product_cat a.button.product_type_variable.add_to_cart_button{
-    display: none!important;
+.tax-product_cat a.button.product_type_variable.add_to_cart_button {
+    display: none !important;
 }
 
 p.woocommerce-result-count {
@@ -34,19 +34,17 @@ h1.woocommerce-products-header__title.page-title {
     margin-bottom: 20px;
 }
 
-ul.products img{
+ul.products img {
     border-radius: 20px;
 }
 
-
-.tax-product_cat p.intro-categoria{
+.tax-product_cat p.intro-categoria {
     font-size: 20px;
     line-height: 29px;
     margin-bottom: 0;
     max-width: 900px;
-    width:100%;
+    width: 100%;
 }
-
 
 .tax-product_cat .categories {
     margin: 3em 0;
@@ -61,9 +59,10 @@ ul.products img{
     gap: 18px;
 }
 
-.tax-product_cat .categories a.current, .categories a.current:hover {
+.tax-product_cat .categories a.current,
+.categories a.current:hover {
     background: var(--accent);
-    color: #fff;
+    color: var(--white);
 }
 
 .tax-product_cat .categories a {
@@ -80,7 +79,7 @@ ul.products img{
     text-transform: capitalize;
 }
 
-.flex-info-title-product{
+.flex-info-title-product {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -90,34 +89,109 @@ ul.products img{
     margin-top: 14px;
 }
 
-.woocommerce-page ul.products li.product{
+.woocommerce-page ul.products li.product {
     margin: 0 3% 2.6em 0;
 }
 
-.woocommerce ul.products li.last, .woocommerce-page ul.products li.last{
-    margin-right: 0!important;
+.woocommerce ul.products li.last,
+.woocommerce-page ul.products li.last {
+    margin-right: 0 !important;
 }
 
-.woocommerce ul.products li.product a img{
-    width: 100%; /* O un ancho fijo */
-    height: auto; /* Mantiene la proporción */
-    aspect-ratio: 3 / 4; /* Ajusta la relación de aspecto */
-    object-fit: cover; /* Evita distorsiones */
+.woocommerce ul.products li.product a img {
+    width: 100%;
+    /* O un ancho fijo */
+    height: auto;
+    /* Mantiene la proporción */
+    aspect-ratio: 3 / 4;
+    /* Ajusta la relación de aspecto */
+    object-fit: cover;
+    /* Evita distorsiones */
     margin-bottom: 0;
 }
 
-.tax-product_cat h3.woocommerce-loop-product__title{
+.tax-product_cat h3.woocommerce-loop-product__title {
     padding: 0!important;
-    font-size: 18px!important;
+    font-size: 20px!important;
+    /* font-size: 18px !important; */
 }
 
 .tax-product_cat span.woocommerce-Price-amount.amount bdi {
     font-weight: bold;
-    /* font-size: 22px; */
     font-size: 24px;
     color: var(--pink);
 }
 
-.woocommerce ul.products li.product .button, .woocommerce #review_form #respond .form-submit input{
-    display: none;
+.woocommerce ul.products li.product .button{
+   display: none; 
+}
+.woocommerce #review_form #respond .form-submit input {
+    display: block
+}
+
+@media only screen and (max-width: 980px) {
+    .tax-product_cat main {
+        padding: 200px 0 0;
+    }
+
+    h1.woocommerce-products-header__title.page-title {
+        font-size: 46px;
+        line-height: normal;
+        margin-bottom: 0;
+    }
+
+    .tax-product_cat .categories {
+        margin: 2em 0 2.5em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .woocommerce ul.products[class*=columns-] li.product,
+    .woocommerce-page ul.products[class*=columns-] li.product {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .tax-product_cat header #header-nav {
+        padding: 10px 20px;
+    }
+
+    .tax-product_cat .categories ul{
+        gap: 10px;
+    }
+
+    .tax-product_cat .categories a {
+        padding: 6px 20px;
+    }
+
+    h1.woocommerce-products-header__title.page-title {
+        font-size: 36px;
+    }
+
+    .tax-product_cat p.intro-categoria{
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .flex-info-title-product {
+        padding: 0;
+    }
+
+    .tax-product_cat .categories {
+        margin: 1.5em 0 2em;
+
+    }
+    
+    .woocommerce ul.products[class*=columns-] li.product,
+    .woocommerce-page ul.products[class*=columns-] li.product {
+        margin-bottom: 2em
+    }
+
+    .tax-product_cat main {
+        padding-top: 180px;
+        margin-bottom: 30px;
+    }
 }
