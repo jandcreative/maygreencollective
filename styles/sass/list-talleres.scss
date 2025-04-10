@@ -3,7 +3,7 @@
 /* Intro */
 
 main {
-    padding: 80px 0 0;
+    padding: 200px 0 0;
 }
 
 body.single .container {
@@ -21,12 +21,6 @@ body.single .container {
 .post-type-archive .container {
     max-width: 1200px;
     width: 100%;
-}
-
-.post-type-archive header,
-.single-taller header,
-.page-template-page-legal header{
-    position: relative;
 }
 
 .post-type-archive header #header-nav,
@@ -144,6 +138,7 @@ section .talleres-list article .frame-content a.button {
     text-transform: uppercase;
     background-color: var(--accent);
     color: var(--white);
+    text-align: center;
 }
 
 section .talleres-list article:hover .frame-content {
@@ -169,7 +164,7 @@ section.banner {
 }
 
 section.banner .hero-contact {
-    background-image: linear-gradient(to bottom, rgba(18, 71, 55, .3) 0%, rgba(18, 71, 55, .3) 25%, rgba(18, 71, 55, .3) 75%, rgba(18, 71, 55, .3) 100%), url(https://jandcreative-dev.com/may_green_collective/wp-content/uploads/img_banner.jpg);
+    background-image: linear-gradient(to bottom, rgba(18, 71, 55, .3) 0%, rgba(18, 71, 55, .3) 25%, rgba(18, 71, 55, .3) 75%, rgba(18, 71, 55, .3) 100%), url(https://www.maygreencollective.es/wp-content/uploads/img_banner.jpg);
     height: 470px;
     background-position: center;
     background-repeat: no-repeat;
@@ -202,7 +197,7 @@ section.banner .hero-contact .container-contact a.button{
 
 @media only screen and (max-width: 980px) {
     main {
-        padding: 50px 0 0;
+        padding: 180px 0 0;
     }
 
     section.talleres .intro{
@@ -226,10 +221,6 @@ section.banner .hero-contact .container-contact a.button{
 }
 
 @media only screen and (max-width: 480px) {
-
-    main {
-        padding: 30px 0 0;
-    }
 
     .post-type-archive header #header-nav,
     .single-taller header #header-nav,
