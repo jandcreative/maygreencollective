@@ -6,7 +6,8 @@ footer {
     padding: 55px 40px 0;
     border-radius: 40px 40px 0 0;
     top: -40px;
-
+    z-index: 1000;
+    
     li{
         list-style: none;
         line-height: 26px;
