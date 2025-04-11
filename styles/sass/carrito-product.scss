@@ -214,6 +214,15 @@ li.wc-block-grid__product a {
 	font-weight:bold;
 }
 
+.wp-block-woocommerce-cart-order-summary-coupon-form-block.wc-block-components-totals-wrapper button.wc-block-components-button.wp-element-button.wc-block-components-totals-coupon__button.contained {
+    background-color: var(--accent);
+    color: var(--accent);
+    font-weight: bold;
+    border: none;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
 
 @media only screen and (max-width: 980px) {
     .page-template-page-carrito main {
