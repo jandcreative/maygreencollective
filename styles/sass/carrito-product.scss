@@ -203,6 +203,18 @@ li.wc-block-grid__product a {
     background-color: var(--white);
 }
 
+/* Cuppon */
+
+.wp-block-woocommerce-cart-order-summary-coupon-form-block.wc-block-components-totals-wrapper {
+    background-color: var(--soft);
+}
+
+.wp-block-woocommerce-cart-order-summary-coupon-form-block.wc-block-components-totals-wrapper div{
+	color: var(--accent);
+	font-weight:bold;
+}
+
+
 @media only screen and (max-width: 980px) {
     .page-template-page-carrito main {
         padding: 200px 40px 60px;
