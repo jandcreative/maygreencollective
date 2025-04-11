@@ -403,6 +403,30 @@ input#wp-comment-cookies-consent {
     /*font-size: 22px;*/
 }
 
+
+/* Etiqueta Socio */
+.woocommerce span.onsale {
+    height: 3.6em;
+    width: 3.6em;
+    padding: .202em;
+    font-size: 1em;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    line-height: 3.2em;
+    top: -.5em;
+    left: -.5em;
+    margin: 0;
+    border-radius: 100%;
+    background-color: var(--pink);
+    color: #fff;
+    font-size: 0.9em;
+    z-index: 9;
+    /* transform: rotate(-24deg);*/
+}
+
+
+
 @media only screen and (max-width: 980px) {
     .single-product main {
         padding: 200px 40px 0;
