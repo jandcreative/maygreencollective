@@ -33,6 +33,13 @@ if(!function_exists('maygreen_support')):
 			)
 		);
 
+
+        register_nav_menus(
+			array(
+				'categorias' => __('Menu Productos', 'maygreen'),
+			)
+		);
+
         register_nav_menus(
 			array(
 				'secondary' => __('Menu Footer', 'maygreen'),
@@ -74,6 +81,7 @@ function maygreen_enqueue_style() {
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/menu.js', ['jquery']);
 	wp_enqueue_script('nav', get_template_directory_uri() . '/js/nav.js', ['jquery']);
 	wp_enqueue_script('scroll-reveal', get_template_directory_uri() . '/js/reveal.js');
+    wp_enqueue_script('search', get_template_directory_uri() . '/js/search-menu.js');
 }
 
 add_action('wp_enqueue_scripts', 'maygreen_enqueue_style');
@@ -507,3 +515,4 @@ function custom_move_rating() {
 }
 add_action( 'wp', 'custom_move_rating' );
 
+add_action( 'comment_post', 'notificar_nueva_valoracion', 10, 2 );
