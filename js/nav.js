@@ -9,6 +9,12 @@ jQuery(document).ready(function ($) {
       $('#header').removeClass('nav-up');
     }
     if ($(window).scrollTop()) {
+      $('.login').addClass('nav-up');
+    }
+    else {
+      $('.login').removeClass('nav-up');
+    }
+    if ($(window).scrollTop()) {
       $('#page-wrapper').addClass('top');
     }
     else {
