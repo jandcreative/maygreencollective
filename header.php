@@ -96,11 +96,7 @@
 				</div>
 
 				<div class="icons-menu">
-
-				   <!--  <div id="menu-item-fibosearch">
-						Hola
-					</div> -->
-
+					
 					<div class="search">
 						<img src="http://maygreencollective.local/wp-content/uploads/icon_search.svg" alt="search">
 					</div>
