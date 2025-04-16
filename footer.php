@@ -6,6 +6,18 @@
 	</div>
 
 	<div class="column">
+	<h4>Categorías:</h4>
+		<?php wp_nav_menu(
+			array(
+				'theme_location' => 'categorias',
+				'container' => 'nav',
+				'container_id' => 'enlace',
+			)
+		);
+		?>
+	</div>
+
+	<div class="column">
 	<h4>Ver también:</h4>
 		<?php wp_nav_menu(
 			array(
