@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -22,8 +23,8 @@
 		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
 		rel="stylesheet">
 	<script>
-		$(function() {
-			$('a[href*="#"]:not([href="#"])').click(function() {
+		$(function () {
+			$('a[href*="#"]:not([href="#"])').click(function () {
 				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 					var target = $(this.hash);
 					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -43,10 +44,10 @@
 	// Verifica si el usuario está en un dispositivo móvil
 	if (!wp_is_mobile()) {
 		// Si no es un dispositivo móvil, imprime el script
-	?>
+		?>
 		<script src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/js/reveal.js"></script>
 
-	<?php
+		<?php
 	}
 	?>
 
@@ -96,6 +97,14 @@
 
 				<div class="icons-menu">
 
+				   <!--  <div id="menu-item-fibosearch">
+						Hola
+					</div> -->
+
+					<div class="search">
+						<img src="http://maygreencollective.local/wp-content/uploads/icon_search.svg" alt="search">
+					</div>
+
 					<div class="account">
 						<a href="https://www.maygreencollective.es/mi-cuenta/">
 							<img src="https://www.maygreencollective.es/wp-content/uploads/icon_account.svg"
@@ -113,7 +122,33 @@
 						?>
 					</div>
 				</div>
-			</div>
+			
+
 		</div>
+
 	</header>
+	
+	<div id="search-popup" style="display:none;">
+	 	<div class="item-flex">
+			<?php echo do_shortcode('[fibosearch]'); ?>
+			<div class="close"><img src="http://maygreencollective.local/wp-content/uploads/icon_croix.svg"></div>
+		</div>
+	</div>
+
 	<div class="overlay-menu"></div>
+	<?php
+	if (is_user_logged_in()) {
+		$current_user = wp_get_current_user();
+		$allowed_roles = array('customer', 'subscriber');
+		if (array_intersect($allowed_roles, (array) $current_user->roles)) {
+			// El usuario tiene al menos uno de los roles permitidos
+			?>
+			<div class="login-notice">
+				<div class="usuario-logueado">
+					<p>¡Hola, <?php echo esc_html($current_user->display_name); ?>!</p>
+				</div>
+			</div>
+			<?php
+		}
+	}	
+	?>
