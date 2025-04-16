@@ -1223,11 +1223,16 @@ section.grid-banners .list-banners-coleccion .banner:hover .overlay-black {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .categorias-home h3 a {
   text-decoration: none;
   color: var(--accent);
+}
+
+.categorias-home .wp-block-image > a {
+  width: 100%;
 }
 
 /* Upcycling */
@@ -1707,9 +1712,9 @@ section#contact .map {
   .box-form {
     padding: 40px;
   }
-  .wp-block-columns {
-    flex-direction: column;
-  }
+  /*     .wp-block-columns {
+          flex-direction: column;
+      } */
   .wp-block-columns figure {
     text-align: left;
   }
