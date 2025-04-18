@@ -1719,6 +1719,16 @@ section#contact .map {
     text-align: left;
   }
 }
+@media (max-width: 781px) {
+  .categorias-home .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 45% !important;
+  }
+}
+@media (max-width: 480px) {
+  .categorias-home .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 100% !important;
+  }
+}
 @media only screen and (max-width: 680px) {
   section.grid-banners .list-banners-coleccion {
     flex-direction: column;
@@ -2693,7 +2703,7 @@ body.single-taller .map.acf-map {
 }
 
 .single-product main {
-  padding: 240px 40px 0;
+  padding: 200px 40px 0;
   max-width: 1200px;
   margin: 0 auto;
 }
