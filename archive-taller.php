@@ -19,27 +19,30 @@ global $wp_query;
     <section class="layout-talleres">
         <div class="container">
 
-            <!--     <div class="container-filter">
-                    <?php echo do_shortcode('[facetwp facet="fecha"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="ubicacin"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="categories"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="metodologia"]'); ?>
-                    <?php echo do_shortcode('[facetwp facet="ponente"]'); ?>
-            </div> -->
-            <div class="talleres-list">
+            <div class="container-filter">        
+                <?php echo do_shortcode('[facetwp facet="fecha"]'); ?>
+                <?php echo do_shortcode('[facetwp facet="categories"]'); ?>
+                <?php echo do_shortcode('[facetwp submit="Filtrar"]'); ?>
+            </div>
+    
                 <?php
                 $args = array(
                     'post_type'      => 'taller', // Nombre del CPT
-                    'posts_per_page' => -1,       
-                    'orderby'        => 'date',  
-                    'order'          => 'DESC',  
+                    'posts_per_page' => -1,
+                    'facetwp'	=> true,   
+                    'post_status' => 'publish',   
+                  /*   'orderby'        => 'date',  
+                    'order'          => 'DESC',  */ 
                 );
                 $query = new WP_Query($args);
 
-                if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                        ?>
+                if ($query->have_posts()) { ?>
+            
+            <div class="talleres-list facetwp-template">
+
+                <?php while ($query->have_posts()) {
+				$query->the_post();
+				?>
                         <article>
                             <div class="frame-image">
                                 <?php
@@ -58,14 +61,18 @@ global $wp_query;
                                 <a href="<?php the_permalink(); ?>" class="button">INSCRÍBETE</a>
                             </div>
                         </article>
-                        <?php
-                    }
-                    wp_reset_postdata();
-                } else {
-                    echo '<p>No hay talleres disponibles en este momento.</p>';
-                }
-                ?>
+                    
+				<?php
+			    } ?>
+		        </div>
+		<?php } else {
+			// No se encontraron posts
+			echo 'No hay eventos disponibles.';
+		}
 
+		// Restablecer Post Data
+		wp_reset_postdata();
+		?>
 
             </div>
             <!-- 		<div class="block-espacer"></div> -->
@@ -84,7 +91,7 @@ global $wp_query;
 </main>
 
 
-<!-- <script>
+<script>
     document.addEventListener('facetwp-loaded', function() {
         if (!window.facetwpRefreshed) {
             setTimeout(function() {
@@ -93,7 +100,7 @@ global $wp_query;
             }, 500);
         }
     });
-</script> -->
+</script>
 
 <?php
 get_footer();
@@ -102,3 +109,44 @@ get_footer();
 </body>
 
 </html>
+
+<style>
+    .container-filter {
+    display: flex
+;
+    gap: 12px 16px;
+    position: relative;
+    flex-wrap: wrap;
+    padding-bottom: 5px;
+    margin-bottom: 2em;
+}
+
+.facetwp-submit {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.facetwp-facet.facetwp-facet-fecha.facetwp-type-date_range {
+    display: flex;
+    gap: 2em;
+}
+
+.facetwp-facet.facetwp-facet-fecha input {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: transparent !important;
+}
+
+.container-filter input {
+    padding: 4px 14px;
+    border-radius: 10px;
+    border: 2px solid #404041;
+    color: #404041;
+    appearance: none;
+    height: 43px;
+}
+</style>
