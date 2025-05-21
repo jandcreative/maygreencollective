@@ -472,7 +472,7 @@ add_filter( 'gform_pre_submission_filter', 'aplicar_descuento_a_suscriptores' );
 add_filter( 'gform_admin_pre_render', 'aplicar_descuento_a_suscriptores' );
 
 
-/* Descuento Suscriptores - 10% - Gravity forms */
+/* Descuento Suscriptores - 10% - Gravity forms *//* Descuento Suscriptores - 25% - Gravity Forms */
 function aplicar_descuento_a_suscriptores( $form ) {
     
     // Solo si el usuario está logueado y es suscriptor
@@ -484,7 +484,7 @@ function aplicar_descuento_a_suscriptores( $form ) {
                 // Verifica si es un campo de producto y aplica descuento
                 if ( $field->type == 'product' && $field->inputType == 'singleproduct' ) {
                     $precio_original = floatval( $field->basePrice );
-                    $nuevo_precio = $precio_original * 0.9; // 10% descuento
+                    $nuevo_precio = $precio_original * 0.75; // 25% descuento
                     $field->basePrice = number_format( $nuevo_precio, 2, '.', '' );
                 }
             }

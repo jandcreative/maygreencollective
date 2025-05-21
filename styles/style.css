@@ -1719,6 +1719,16 @@ section#contact .map {
     text-align: left;
   }
 }
+@media (max-width: 781px) {
+  .categorias-home .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 45% !important;
+  }
+}
+@media (max-width: 480px) {
+  .categorias-home .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 100% !important;
+  }
+}
 @media only screen and (max-width: 680px) {
   section.grid-banners .list-banners-coleccion {
     flex-direction: column;
@@ -1986,9 +1996,36 @@ section .talleres-list {
 }
 
 section .talleres-list article {
-  border-radius: 40px;
+  /*     border-radius: 40px; */
   position: relative;
-  overflow: hidden;
+  /*     overflow: hidden; */
+}
+
+section .talleres-list article span.onsale {
+  background-color: var(--pink);
+}
+
+section .talleres-list article span.onsale {
+  height: 4.5em;
+  width: 4.5em;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 700;
+  position: absolute;
+  text-align: center;
+  line-height: 18px;
+  top: -1.5em;
+  left: -1em;
+  margin: 0;
+  border-radius: 100%;
+  background-color: var(--pink);
+  color: #fff;
+  font-size: 1em;
+  z-index: 9;
+  /*     transform: rotate(-24deg); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section .talleres-list article span.tag {
@@ -2014,6 +2051,7 @@ section .talleres-list article .frame-image {
   height: 300px;
   overflow: hidden;
   width: 100%;
+  border-radius: 40px 40px 0 0;
 }
 
 section .talleres-list article .frame-image img {
@@ -2033,6 +2071,8 @@ section .talleres-list article .frame-content {
   background-color: var(--soft);
   padding: 20px 24px 30px;
   min-height: 200px;
+  overflow: hidden;
+  border-radius: 0 0 40px 40px;
 }
 
 section .talleres-list article .frame-content h2 {
@@ -2693,7 +2733,7 @@ body.single-taller .map.acf-map {
 }
 
 .single-product main {
-  padding: 240px 40px 0;
+  padding: 200px 40px 0;
   max-width: 1200px;
   margin: 0 auto;
 }
