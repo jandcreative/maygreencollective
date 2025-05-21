@@ -1,13 +1,21 @@
+<?php
+/* Template Name: Page Socio */
+/* Template Post Type: post, page, product */
+?>
+
 <?php get_header(); ?>
 
-	<div id="page-wrapper">
+<div id="page-wrapper">
 
-		<?php the_content(); ?>
+	<?php the_content(); ?>
 
-	</div>
+</div>
+
 
 <?php get_footer(); ?>
 
+
+<script type="text/javascript" src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/js/accordion.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

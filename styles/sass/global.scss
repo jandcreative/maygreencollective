@@ -2,7 +2,6 @@
 
 html {
   overflow-x: hidden;
-  /*   scroll-snap-type: y mandatory; */
 }
 
 body {
@@ -33,7 +32,7 @@ h2 {
   font-family: "Roboto Slab", serif;
   font-size: 55px;
   color: var(--accent);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 66px;
   padding-bottom: 20px;
 }
@@ -41,7 +40,7 @@ h2 {
 
 h3 {
   font-family: "Roboto Slab", serif;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 28px;
   color: var(--accent);
 }
@@ -91,6 +90,8 @@ button {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 40px;
+  z-index: 10;
+  position: relative;
 }
 
 .wide-width{
@@ -124,7 +125,7 @@ button {
 
 /* MediaQueries */
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1020px) {
 
   h2 {
     font-size: 46px;

@@ -1,0 +1,118 @@
+
+section.contactar{
+    padding: 160px 0 140px;
+}
+
+.columns-contact {
+    gap: 4em;
+}
+
+.page-template-page-contact #page-wrapper h1 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: normal;
+    color: var(--accent);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.contact-map .map.acf-map {
+    height: 734px;
+}
+
+.box-form-contact label {
+    font-size: 17px!important;
+    font-family: "Roboto Slab", serif;
+    color: var(--accent);
+    font-weight: 600;
+    padding-bottom: 0.5em!important;
+    display: block!important;
+}
+
+.box-form-contact .gform-footer.gform_footer.top_label {
+    margin-top: 0!important;
+}
+
+.box-form-contact div#gform_fields_3 div,
+.box-form-contact .ginput_container.ginput_container_consent {
+    margin-bottom: 1em;
+}
+
+.box-form-contact input,
+.box-form-contact textarea {
+    width: 100%;
+    padding: 0.8em!important;
+    background-color: var(--soft);
+    border-radius: 8px;
+    border: 2px solid var(--accent);
+    font-size: 16px!important;
+    font-family: "Roboto Slab", serif;
+    color: var(--black);
+}
+
+.box-form-contact fieldset#field_3_5 {
+    border: 0;
+}
+
+.box-form-contact label.gform-field-label.gform-field-label--type-inline.gfield_consent_label {
+    font-weight: 400;
+    align-items: baseline;
+}
+
+.box-form-contact label.gform-field-label.gform-field-label--type-inline.gfield_consent_label a {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.box-form-contact input#input_3_5_1,
+.box-form-contact input#input_15_5_1 {
+    width: auto;
+}
+
+.box-form-contact  input#gform_submit_button_3,
+.box-form-contact  input#gform_submit_button_15  {
+    width: fit-content;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    font-family: "Roboto", sans-serif;
+    font-size: 14px!important;
+    font-weight: bold;
+    padding: 10px 14px!important;
+    width: fit-content!important;
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 8px;
+    min-width: 155px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 680px) {
+    section.contactar {
+        padding: 120px 0;
+    }
+
+    .wp-block-column.contact-map.is-layout-flow.wp-block-column-is-layout-flow {
+        order: 2;
+    }
+
+    .columns-contact {
+        gap: 2em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    section.contactar{
+        padding: 100px 0;
+}
+    .page-template-page-contact #page-wrapper h1{
+        font-size: 36px;
+        padding-bottom: 10px;
+    }
+
+    .contact-map .map.acf-map {
+        height: 480px;
+    }
+}

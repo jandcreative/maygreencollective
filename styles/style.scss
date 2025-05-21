@@ -13,8 +13,41 @@
 /* Header */
 @import "sass/header.scss";
 
-/* Home */
-@import "sass/home.scss";
+/* Blocks */
+@import "sass/blocks.scss";
+
+/* Listado Talleres */
+@import "sass/list-talleres.scss";
+
+/* Single Talleres */
+@import "sass/single-talleres.scss";
+
+/* Single Product */
+@import "sass/single-product.scss";
+
+/* Category Product */
+@import "sass/category-product.scss";
+
+/* Taxonomia Coleccion */
+@import "sass/tax-coleccion-product.scss";
+
+/* Carrito */
+@import "sass/carrito-product.scss";
+
+/* Legal */
+@import "sass/legal.scss";
+
+/* Mi Cuenta*/
+@import "sass/my-account.scss";
+
+/* Contact */
+@import "sass/contact.scss";
 
 /* Footer */
 @import "sass/footer.scss";
+
+/* Cookies */
+@import "sass/cookies.scss";
+
+/* Error 404 */
+@import "sass/error.scss";

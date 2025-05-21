@@ -1,0 +1,112 @@
+/* Coleccion */
+
+/* Header */
+.tax-coleccion header #header-nav {
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--soft);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tax-coleccion #header-nav .desktop-menu ul li a {
+    color: var(--accent);
+}
+
+/* Intro */
+
+#page-wrapper .woocommerce-products-header-coleccion{
+    padding-top: 140px;
+}
+
+.woocommerce-products-header-coleccion .container-coleccion{
+    padding:40px;
+}
+
+.woocommerce-products-header-coleccion {
+    background-color: var(--accent);
+    min-height: 550px;
+    height: auto;
+    position: relative;
+    border-radius: 0 0 40px 40px;
+    display: flex;
+    justify-content: center;
+
+    .container-coleccion {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        max-width: 1100px;
+        width: 100%;
+        padding: 40px;
+
+        h1{
+            color: var(--pink);
+        }
+
+        div.intro-coleccion p{
+            color: var(--white);
+            font-size: 20px;
+            line-height: 29px;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+/* Contenido */
+.tax-coleccion main {
+    padding: 80px 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tax-coleccion h3.woocommerce-loop-product__title {
+    padding: 0 !important;
+    font-size: 18px !important;
+}
+
+.tax-coleccion span.woocommerce-Price-amount.amount bdi {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--pink);
+}
+
+@media only screen and (max-width: 1020px) {
+    .tax-coleccion main {
+        padding: 60px 0 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    
+
+    #page-wrapper .woocommerce-products-header-coleccion {
+        padding-top: 160px;
+    }
+
+    .tax-coleccion header #header-nav {
+        padding: 10px 20px;
+    }
+
+    .woocommerce-products-header-coleccion .container-coleccion{
+        padding:20px;
+    }
+
+    .woocommerce-products-header-coleccion .container-coleccion h1{
+        padding-bottom: 16px;
+    }
+
+    .woocommerce-products-header-coleccion .container-coleccion div.intro-coleccion p{
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .tax-coleccion main {
+        padding: 40px 0 0;
+    }
+
+    .tax-coleccion h3.woocommerce-loop-product__title {
+        font-size: 20px !important;
+    }
+    
+}

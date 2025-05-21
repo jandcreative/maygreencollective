@@ -9,7 +9,19 @@ jQuery(document).ready(function ($) {
       $('#header').removeClass('nav-up');
     }
     if ($(window).scrollTop()) {
+      $('.login').addClass('nav-up');
+    }
+    else {
+      $('.login').removeClass('nav-up');
+    }
+    if ($(window).scrollTop()) {
       $('#page-wrapper').addClass('top');
+    }
+    else {
+      $('.mega-sub-menu').removeClass('top');
+    }
+    if ($(window).scrollTop()) {
+      $('.mega-sub-menu').addClass('top');
     }
     else {
       $('#page-wrapper').removeClass('top');

@@ -1,0 +1,276 @@
+  
+/* Talleres */
+/* Intro */
+
+main {
+    padding: 200px 0 0;
+}
+
+body.single .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.single-taller #header-nav .desktop-menu ul li a,
+.post-type-archive #header-nav .desktop-menu ul li a,
+.page-template-page-legal #header-nav .desktop-menu ul li a{
+    color: var(--accent);
+}
+
+.post-type-archive .container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.post-type-archive header #header-nav,
+.single-taller header #header-nav,
+.page-template-page-legal header #header-nav{
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--soft);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+section.talleres .intro {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 4em;
+}
+
+section.talleres .intro h1 {
+    font-family: "Roboto Slab", serif;
+    max-width: 800px;
+    width: 100%;
+    font-size: 55px;
+    color: var(--accent);
+    font-weight: bold;
+    line-height: 66px;
+    padding-bottom: 36px;
+    margin-bottom: 0;
+}
+
+section.talleres .intro {
+    gap: 0;
+}
+
+/* Talleres List */
+
+section .talleres-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-gap: 3.5rem 2rem;
+    align-items: baseline;
+    width: 100%;
+    padding-bottom: 120px;
+    align-items: start;
+}
+
+section .talleres-list article {
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+section .talleres-list article span.tag {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: var(--white);
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+section .talleres-list article a {
+    text-decoration: none;
+}
+
+section .talleres-list article .frame-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    width: 100%;
+}
+
+section .talleres-list article .frame-image img {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: 100%;
+    /* Ocupa todo el alto del contenedor */
+    object-fit: cover;
+    /* Recorta la imagen para llenar el contenedor */
+    object-position: center;
+    /* Centra la imagen */
+    display: block;
+    /* Elimina espacios blancos adicionales */
+}
+
+section .talleres-list article .frame-content {
+    background-color: var(--soft);
+    padding: 20px 24px 30px;
+    min-height: 200px;
+}
+
+section .talleres-list article .frame-content h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--accent);
+    line-height: normal;
+    margin-bottom: 0;
+    padding-bottom: 6px;
+}
+
+section .talleres-list article .frame-content p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+section .talleres-list article .frame-content a.button {
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    color: var(--white);
+    text-align: center;
+}
+
+section .talleres-list article:hover .frame-content {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+section .talleres-list article:hover h2,
+section .talleres-list article:hover p {
+    color: var(--white);
+}
+
+section .talleres-list article:hover a.button {
+    background-color: var(--white);
+    color: var(--accent);
+}
+
+/* Banner */
+
+section.banner {
+    padding: 0;
+    min-height: auto;
+}
+
+section.banner .hero-contact {
+    background-image: linear-gradient(to bottom, rgba(18, 71, 55, .3) 0%, rgba(18, 71, 55, .3) 25%, rgba(18, 71, 55, .3) 75%, rgba(18, 71, 55, .3) 100%), url(https://www.maygreencollective.es/wp-content/uploads/img_banner.jpg);
+    height: 470px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.banner .hero-contact .container-contact {
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+section.banner .hero-contact .container-contact h2{
+    color: var(--white);
+}
+
+section.banner .hero-contact .container-contact a.button{
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+@media only screen and (max-width: 1020px) {
+    main {
+        padding: 180px 0 0;
+    }
+
+    section.talleres .intro{
+        padding-bottom: 3rem;
+    }
+
+    section.talleres .intro h1{
+        font-size: 46px;
+        line-height: normal;
+        padding-bottom: 20px;
+    }
+
+    section .talleres-list{
+        grid-gap: 2.5rem 2rem;
+        padding-bottom: 80px;
+    }
+
+    section.banner .hero-contact{
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .post-type-archive header #header-nav,
+    .single-taller header #header-nav,
+    .page-template-page-legal header #header-nav{
+        padding: 10px 20px;
+    }
+
+    section.talleres .intro{
+        padding-bottom: 2rem;
+    }
+
+    section.talleres .intro h1{
+        font-size: 36px;
+    }
+    
+    section .talleres-list{
+        grid-gap: 2rem;
+        padding-bottom: 60px;
+    }
+
+    section .talleres-list article .frame-image {
+        height: 260px;
+    }
+
+    section .talleres-list article .frame-content {
+        padding: 20px 20px 26px;
+        min-height: auto;
+    }
+
+    section .talleres-list article .frame-content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    section.banner .hero-contact{
+        height: 300px;
+    }
+
+    section.banner .hero-contact .container-contact h2{
+        font-size: 34px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    section .talleres-list{
+        grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+    }
+
+    section .talleres-list article .frame-image {
+        height: 200px;
+    }
+}  

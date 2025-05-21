@@ -1,9 +1,7 @@
 @font-face {
   font-family: "Better-Grade";
-  src: url("../assets/fonts/Better-Grade.eot");
-  src: url("../assets/fonts/Brockmann-Regular.eot?#iefix") format("embedded-opentype"),
-    url("../assets/fonts/Better-Grade.svg#Brockmann-Regular") format("svg"),
-    url("../assets/fonts/Better-Grade.ttf") format("truetype"),
-    url("../assets/fonts/Better-Grade.woff") format("woff"),
-    url("../assets/fonts/Better-Grade.woff2") format("woff2");
+  src: url("../assets/fonts/Better-Grade.woff2") format("woff2"),
+       url("../assets/fonts/Better-Grade.woff") format("woff"),
+       url("../assets/fonts/Better-Grade.ttf") format("truetype"),
+       url("../assets/fonts/Better-Grade.eot"); /* Fallback */
 }
