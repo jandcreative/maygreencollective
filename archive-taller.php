@@ -92,7 +92,6 @@ global $wp_query;
             ?>
 
         </div>
-        <!-- 		<div class="block-espacer"></div> -->
         </div>
     </section>
 
